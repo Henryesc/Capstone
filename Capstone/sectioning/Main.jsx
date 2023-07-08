@@ -9,7 +9,7 @@ const Main = () => {
         <Route path="about-us" element={<AboutUs />} />
         <Route path="contact" element={<Contact />} />
         <Route path="gift-cards" element={<GiftCards />} />
-        <Route path="menu" element={<Menu />} />
+        <Route path="menus" element={<Menu />} />
         <Route path="order-pay" element={<OrderPay />} />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -1,3 +1,4 @@
+import { Footer, Header, Main } from "../sectioning"
 import './App.css'
 import { Footer, Header, Main } from './sectioning';
 

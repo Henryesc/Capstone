@@ -1,8 +1,12 @@
+import React from 'react'
+import Testimonials from '../components/Testimonials.jsx'
+
 
 
 const Landing = () => {
   return (
-    <div>Landing</div>
+  
+    <Testimonials />
   )
 }
 export default Landing

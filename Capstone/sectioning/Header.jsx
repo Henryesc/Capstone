@@ -10,8 +10,8 @@ const Header = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate("/");
   const handleNavClick = (e) => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleWindowResize = () => {
@@ -36,7 +36,7 @@ const Header = () => {
     });
 
   return (
-    <HeaderContainer>
+    <HeaderContainer size={windowWidth}>
       <NavContainer className="y-wrap">
         <IconContainer size={windowWidth} onClick={handleClick}>
           <Image src={image} />
@@ -46,7 +46,7 @@ const Header = () => {
         )}
         {windowWidth <= 992 && (
           <MobileContainer>
-            <SmallScreenContainer isMobile={isOpen} className="y-navs">
+            <SmallScreenContainer isMobile={isOpen}>
               {navs}
             </SmallScreenContainer>
             <Hamburger toggled={isOpen} toggle={setIsOpen} size={28} />
@@ -61,18 +61,29 @@ export default Header;
 
 const HeaderContainer = styled.header`
   background: transparent;
+  position: absolute;
+  width: ${(props) => (props.size <= 992) ? "100%;" : "90%;"};
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  color: #fff;
+  margin: 0 auto;
 `;
 
 const NavContainer = styled.nav`
+position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 24px 12px;
+  margin: 0 auto;
 `;
 
 const IconContainer = styled.a`
-  height: ${(props) => props.size <= 992 ? "60px;" : "110px:;" };
-  width: ${(props) => props.size <= 992 ? "60px;" : "110px;" };
+  height: ${(props) => (props.size <= 992 ? "60px;" : "110px:;")};
+  width: ${(props) => (props.size <= 992 ? "60px;" : "110px;")};
 `;
 
 const LargeScreenContainer = styled.ul`
@@ -83,15 +94,16 @@ const LargeScreenContainer = styled.ul`
 `;
 
 const SmallScreenContainer = styled.ul`
-  width: 100%;
-  height: 100%;
-  background-color: aliceblue;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f78d3;
   position: absolute;
-  top: ${(props) => (props.isMobile ? "50%;" : "-100%;")};
+  top: ${(props) => (props.isMobile ? "0;" : "-100%;")};
   opacity: ${(props) => (props.isMobile ? "1;" : "0;")};
   transition: top 1s ease-in-out;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   gap: 24px;
   flex-direction: column;

@@ -1,12 +1,12 @@
 import React from 'react'
-import Testimonials from '../components/Testimonials.jsx'
+import ImageCarousel from '../components/Testimonials'
 
 
 
 const Landing = () => {
   return (
   
-    <Testimonials />
+    <ImageCarousel />
   )
 }
 export default Landing

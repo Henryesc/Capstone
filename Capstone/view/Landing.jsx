@@ -1,9 +1,10 @@
-import { Background } from "../components"
+import { AboutUs, Background } from "../components"
 
 const Landing = () => {
   return (
     <>
       <Background />
+      <AboutUs />
     </>
   )
 }

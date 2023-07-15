@@ -1,8 +1,10 @@
-
+import { Background } from "../components"
 
 const Landing = () => {
   return (
-    <div>Landing</div>
+    <>
+      <Background />
+    </>
   )
 }
 export default Landing

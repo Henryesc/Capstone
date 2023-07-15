@@ -14,6 +14,7 @@ const Main = () => {
         <Route path="*" element={<Error />} />
       </Routes>
     </main>
+  
   );
 };
 export default Main;

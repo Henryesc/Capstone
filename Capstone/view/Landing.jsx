@@ -1,12 +1,10 @@
-import React from 'react'
-import ImageCarousel from '../components/Testimonials'
-
-
+import { Background } from "../components"
 
 const Landing = () => {
   return (
-  
-    <ImageCarousel />
+    <>
+      <Background />
+    </>
   )
 }
 export default Landing

@@ -9,13 +9,13 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 20px 0;
 }
 
 .root {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 footer {
@@ -49,3 +49,7 @@ header {
   margin: 0 0 0 16px;
 }
 
+
+li .active {
+  color: #d0af3d;
+}

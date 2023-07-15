@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import image from "../assets/gvc.png";
 import { Spin as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
+import "../src/App.css"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +61,13 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+font-family: "Open-Sans-Condensed";
   background: transparent;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  text-transform: uppercase;
   position: absolute;
   width: ${(props) => (props.size <= 992) ? "100%;" : "90%;"};
   top: 0;

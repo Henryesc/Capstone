@@ -3,7 +3,7 @@ import { Landing, AboutUs, Contact, GiftCards, Menu, OrderPay, Error } from "../
 
 const Main = () => {
   return (
-    <main className="y-wrap">
+    <main>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="about-us" element={<AboutUs />} />
@@ -14,7 +14,6 @@ const Main = () => {
         <Route path="*" element={<Error />} />
       </Routes>
     </main>
-  
   );
 };
 export default Main;

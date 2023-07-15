@@ -227,3 +227,4 @@ const FooterContainer = styled.section`
     align-items: center;
   }
 `;
+

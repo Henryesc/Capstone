@@ -1,8 +1,11 @@
-
+import { AboutUs, Background } from "../components"
 
 const Landing = () => {
   return (
-    <div>Landing</div>
+    <>
+      <Background />
+      <AboutUs />
+    </>
   )
 }
 export default Landing

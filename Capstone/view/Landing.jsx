@@ -1,19 +1,18 @@
-import React from 'react'
-import ImageCarousel from '../components/Testimonials'
-import CateringRequest from '../components/CateringRequest'
-import { Background } from "../components"
-
+import React from "react";
+import ImageCarousel from "../components/Testimonials";
+import CateringRequest from "../components/CateringRequest";
+import { Background } from "../components";
+import { AboutUs, Background } from "../components";
 
 const Landing = () => {
-
   return (
-    <div>
+    <>
       <Background />
-    <ImageCarousel />
-    <CateringRequest />
-  </div>
-);
+      <ImageCarousel />
+      <CateringRequest />
+      <AboutUs />
+    </>
+  );
 };
 
-
-export default Landing
+export default Landing;

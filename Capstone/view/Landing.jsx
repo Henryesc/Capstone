@@ -16,3 +16,14 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const Landing = () => {
+  return (
+    <>
+      <Background />
+      <AboutUs />
+    </>
+  )
+}
+export default Landing
+export default Landing

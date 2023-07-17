@@ -1,10 +1,11 @@
-import { AboutUs, Background } from "../components"
+import { AboutUs, Background, OurMenu } from "../components"
 
 const Landing = () => {
   return (
     <>
       <Background />
       <AboutUs />
+      <OurMenu />
     </>
   )
 }

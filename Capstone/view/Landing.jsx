@@ -1,8 +1,8 @@
-
 import React from "react";
 import ImageCarousel from "../components/Testimonials";
 import CateringRequest from "../components/CateringRequest";
-import { AboutUs, Background } from "../components";
+import { AboutUs, Background, OurMenu } from "../components"
+
 
 const Landing = () => {
   return (
@@ -11,9 +11,9 @@ const Landing = () => {
       <ImageCarousel />
       <CateringRequest />
       <AboutUs />
+      <OurMenu />
     </>
   );
 };
 
 export default Landing;
-

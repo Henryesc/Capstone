@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Landing, AboutUs, Contact, GiftCards, Menu, OrderPay, Error } from "../view";
 
+
 const Main = () => {
   return (
     <main>
@@ -13,6 +14,7 @@ const Main = () => {
         <Route path="order-pay" element={<OrderPay />} />
         <Route path="*" element={<Error />} />
       </Routes>
+     
     </main>
   );
 };

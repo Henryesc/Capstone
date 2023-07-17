@@ -22,7 +22,7 @@ const GiftCards = () => {
               <input className="message" type="text" />
             <div className="btn-container">
               <button className="btn">Add To Cart</button>
-              <div>Get 10%off first order</div>
+              <div className="discount">Get 10% off first order</div>
             </div>
             </div>
           </div>
@@ -39,8 +39,7 @@ const Gift = styled.section`
     width: 100%;
     display: flex;
     flex-shrink: 0;
-    background-color: #D0AF3D ;
-    background: linear-gradient(0deg, rgba(208, 175, 61, 0.05) 0%, rgba(208, 175, 61, 0.05) 100%), url(<../assets/Rectangle 34624131.png>), lightgray 0px -1473.534px / 100% 265.483% no-repeat;
+    background-color: rgba(252, 248, 239, 0.959);
   }
   .container{
     width: 100%;
@@ -51,7 +50,7 @@ const Gift = styled.section`
     display: flex;
     align-items: center;
     flex: 0;
-    padding: 0px 5% 0px 5%; 
+    padding: 0px 2% 0px 5%; 
   }
   .img{
     width: 686px;
@@ -61,7 +60,7 @@ const Gift = styled.section`
   .info-section{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    // flex: 1;
     justify-content: center;
   }
   .info-container{
@@ -95,6 +94,7 @@ const Gift = styled.section`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 2px;
   }
   .fill-ins{
     width: 730px;
@@ -113,6 +113,7 @@ const Gift = styled.section`
   .btn-container{
     display: flex;
     padding: 10% 0px 0px 0px;
+    column-gap: 10%;
   }
   .btn{
     width: 240px;
@@ -130,6 +131,13 @@ const Gift = styled.section`
     border: 0px;
   }
   .discount{
-    
+    display: flex;
+    align-self: center;
+    color: #000;
+    font-family: Josefin Sans;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 160% */
   }
 `

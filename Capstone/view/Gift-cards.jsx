@@ -39,7 +39,7 @@ const Gift = styled.section`
     width: 100%;
     display: flex;
     flex-shrink: 0;
-    // background-color: rgba(252, 248, 239, 0.959);
+    background-color: rgba(252, 248, 239, 0.959);
   }
   .container{
     width: 100%;

@@ -8,9 +8,9 @@ const Landing = () => {
   return (
     <>
       <Background />
+      <AboutUs />
       <ImageCarousel />
       <CateringRequest />
-      <AboutUs />
       <OurMenu />
     </>
   );

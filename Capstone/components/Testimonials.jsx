@@ -24,7 +24,7 @@ const data = [
   },
   {
     name: "Samantha HungryForMore",
-    quote: "I am hungry for more! I will be back for sure.",
+    quote: "I am hungry for more! I will be back for sure. Buffet was out of this world!",
     src: "../assets/testimonials/samantha-hungryformore.png",
     id: 4,
   },
@@ -74,32 +74,43 @@ const ImageCarousel = ({ images }) => {
       </h3>
       <br />
       <div className="imageContainer">
-        <img
-          src={data[currentImage].src}
-          className="image-pic"
-          alt={`Image ${currentImage + 1}`}
-        />
+        <div className="quoteControl">
+          <img
+            src={data[currentImage].src}
+            className="image-pic"
+            alt={`Image ${currentImage + 1}`}
+          />
+          <br />
+          <br />
+          <div className="quoteContainer">
+            <div className="quoteBox">
+              <img src="../assets/openquote.png" className="openquote" />
+              <br />
+              <div className="quote">
+              <span className="quotes"> {data[currentImage].quote} </span>
+              </div>
+              <br />
+              <img src="../assets/closequote.png" className="closequote" />
+            </div>
+          </div>
 
-        <br />
-        <div className="quoteContainer">
-          <img src="../assets/openquote.png" className="openquote" />
-          <span className="quotes">{data[currentImage].quote}</span>
-          <img src="../assets/closequote.png" className="closequote" />
-        </div>
-        <h2 className="name">{data[currentImage].name}</h2>
-        <br />
-        <br />
-        <div className="buttons">
-          <button onClick={handlePrev} className="button1">
-            Prev
-          </button>
-          <button onClick={handleNext} className="button2">
-            Next
-          </button>
         </div>
 
         <br />
         <br />
+      </div>
+      <br />
+      <div className="dots">
+        <h2 className="name"> {data[currentImage].name} </h2>
+      </div>
+      <br />
+      <div className="buttons">
+        <button onClick={handlePrev} className="button1">
+          Prev
+        </button>
+        <button onClick={handleNext} className="button2">
+          Next
+        </button>
       </div>
     </div>
   );

@@ -73,7 +73,6 @@ const ImageCarousel = ({ images }) => {
         hello in an email.
       </h3>
       <br />
-
       <div className="imageContainer">
         <div className="quoteControl">
           <img
@@ -94,6 +93,7 @@ const ImageCarousel = ({ images }) => {
               <img src="../assets/closequote.png" className="closequote" />
             </div>
           </div>
+
         </div>
 
         <br />

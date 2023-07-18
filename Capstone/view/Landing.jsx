@@ -8,6 +8,8 @@ const Landing = () => {
   return (
     <>
       <Background />
+      <ImageCarousel />
+      <CateringRequest />
       <AboutUs />
       <ImageCarousel />
       <CateringRequest />

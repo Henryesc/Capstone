@@ -323,3 +323,6 @@ li .active {
       color: white;
     }
 
+li .active {
+  color: #d0af3d;
+}

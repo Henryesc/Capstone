@@ -11,8 +11,6 @@ const Landing = () => {
       <ImageCarousel />
       <CateringRequest />
       <AboutUs />
-      <ImageCarousel />
-      <CateringRequest />
       <OurMenu />
       <LeaveReviews />
     </>

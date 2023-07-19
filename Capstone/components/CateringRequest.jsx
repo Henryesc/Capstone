@@ -9,7 +9,7 @@ const CateringRequest = () => {
       {/* <div className="cateringRequestTextContainer">
         <h1 className="cateringRequestTitle">Catering Request </h1>
       </div> */}
-      <br/>
+      <br />
       <div className="cateringRequest">
         <h1 className="catering">
           DO YOU <span className="catering2"> GOVINDA'S VEGETARIAN </span>
@@ -21,8 +21,9 @@ const CateringRequest = () => {
         </span>
       </div>
       <div className="cateringButtonContainer">
-        <button className="cateringButton">Request
-           Catering</button>
+        <button className="cateringButton" href="jgarcia@email.com">
+          Request Catering
+        </button>
       </div>
     </div>
   );

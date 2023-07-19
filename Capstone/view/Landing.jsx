@@ -8,11 +8,11 @@ const Landing = () => {
   return (
     <>
       <Background />
+      <OurMenu />
       <ImageCarousel />
+      <LeaveReviews />
       <CateringRequest />
       <AboutUs />
-      <OurMenu />
-      <LeaveReviews />
     </>
   );
 };

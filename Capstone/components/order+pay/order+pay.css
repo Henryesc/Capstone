@@ -1,0 +1,117 @@
+/* first column */
+.redirectSpecialsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.redirectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Caviar Dreams";
+  font-size: 45px;
+}
+
+.orderTitleContainer {  display: flex;
+  color: black;
+  /* font-family: "Caviar Dreams"; */
+  font-size: 45px;
+}
+
+.orderTitle {
+  flex: 1;
+  font-family: "Caviar Dreams";
+  font-size: 45px;
+}
+
+.orderLinkContainer {
+  flex: 1;
+  color: #D0AF3D;
+  justify-content: center;
+}
+
+.uberContainer {
+  flex: 1;
+  justify-content: center;
+}
+
+.uberEats {
+  flex: 1;
+  justify-content: center;
+
+}
+
+.uberImage {
+  flex: 1;
+  /* justify-content: center; */
+  height: 464px;
+  width: 464px;
+}
+
+.twitterLink { flex: 1;
+  justify-content: center;
+  color: #D0AF3D;
+}
+
+
+/* second Column */
+.specialMenuContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.specialTitleContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.specialTitle {
+  flex: 1;
+  justify-content: center;
+}
+.instagramContainer {
+  flex: 1;
+
+}
+
+.instagramLink {
+  flex: 1;
+  text-align: center;
+}
+
+.specialsImage {
+  max-height: 464px;
+  max-width: 464px;
+  flex: 1;
+  justify-content: center;
+}
+
+.followUsContainer {
+  flex: 1;
+  justify-content: center;
+}
+
+.followUs {
+  flex: 1;
+  justify-content: center;
+}
+
+.facebook {
+  flex: 1;
+  height: 48px;
+  width: 48px;
+}
+
+.instagram {
+  flex: 1;
+  height: 48px;
+  width: 48px;
+}
+
+.twitter {
+  flex: 1;
+  height: 48px;
+  width: 48px;
+}
+

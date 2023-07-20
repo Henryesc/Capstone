@@ -16,15 +16,17 @@ const CateringRequest = () => {
           CUISINE?
         </h1>
         <br /> <br />
+        <div className="cateringLine">
         <span className="cateringRequestText">
-          Please give us at least 10 days before the desired Catering Date
+          Please give us at least 10 days before the desired Catering Date   
         </span>
-      </div>
-      <div className="cateringButtonContainer">
+        <img src="../assets/spacer.png" className="spacer" />
         <button className="cateringButton" href="jgarcia@email.com">
           Request Catering
         </button>
       </div>
+      </div>
+      <div className="cateringButtonContainer"></div>
     </div>
   );
   

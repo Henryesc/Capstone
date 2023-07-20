@@ -398,7 +398,7 @@ li .active {
   font-family: "Caviar Dreams Bold";
     font-size: 45px;
     font-weight: 700px;
-  padding-left: 290px;
+  padding-left: 190px;
   width: 100%;
   color: white;
   /* align-self: center; */
@@ -429,9 +429,10 @@ li .active {
 }
 
 .cateringRequestText {
+  display: flex;
   font-family: "Josefin-Sans-regular";
   font-size: 20px;
-  padding-left: 290px;
+  padding-left: 190px;
   /* padding-bottom: 143px; */
   /* padding-top: 32px; */
   width: 100%;
@@ -448,7 +449,7 @@ li .active {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   padding-top: 50px;
   /* align-self: center;*/
   
@@ -457,16 +458,23 @@ li .active {
 
 .cateringButtonContainer {
   /* flex: 1; */
-  display: flex;
+  /* display: flex; */
   justify-content: end;
-  padding-right:230px;
+  padding-right: 270px;
   /* padding-top: 50px; */
   height: 50px;
-  min-width: 450px;
-  margin-right: 110px;
-  margin-bottom: 50px;
+  min-width: 550px;
+  margin-bottom: 30px;
 }
 
+.spacer {
+  width: 10px;
+}
+
+.cateringLine {
+  display: flex;
+  padding-right: 275px;
+}
 .cateringButton {
   background-color: #d0af3d;
   font-family: "Josefin";
@@ -475,6 +483,8 @@ li .active {
   font-size: 22px;
   padding-left: 25px;
   padding-right: 25px;
+  width: 400px;
+  height: 32px;
   
 
 }

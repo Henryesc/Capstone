@@ -8,12 +8,11 @@
 
 .titleContainer {
   display: flex;
-  padding-left: 255px;
   font-family: "Caviar Dreams";
   font-size: 45px;
-  column-gap: 50px;
+  /* column-gap: 50px; */
   padding-top: 50px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .order {
@@ -21,14 +20,14 @@
   column-gap: 20px;
   align-self: center;
   width: 700px;
-  padding-left: 200px;
+  padding-left: 100px;
   font-weight: bold;
 }
 
 .orderLink {
   text-decoration: underline;
-  width: 1000px;
-  display: flex;
+  /* width: 1000px; */
+  /* display: flex; */
   flex-wrap: nowrap;
 }
 
@@ -43,7 +42,7 @@
 }
 
 .orderpay {
-  padding-left: 575px;
+  padding-left: 225px;
     width: 800px;
    font-family: "Caviar Dreams";
    font-size: 22px;
@@ -55,7 +54,7 @@
   display: flex;
   column-gap: 20px;
   width: 700px;
-  padding-left: 190px;
+  padding-left: 145px;
   font-weight: bold;
 }
 
@@ -80,7 +79,7 @@
 }
 
 .specialsURL {
-    width: 1000px;
+    /* width: 1000px; */
 }
 
 .specialsBottom {
@@ -130,8 +129,8 @@
 
 .socialLinksContainer {
   display: flex;
-  width:100%;
-  padding-left: 450px;
+  /* width:100%; */
+  padding-left: 100px;
   font-family: "Caviar Dreams";
   font-weight: bold;
   font-size: 20px;

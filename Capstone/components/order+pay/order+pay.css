@@ -1,117 +1,185 @@
-/* first column */
-.redirectSpecialsContainer {
+.redirectSpecialContainer {
+  width:100%;
   display: flex;
-  flex-direction: row;
+  padding-left: 10px;
+  padding-right: 10px;
   justify-content: center;
+  
 }
 
-.redirectContainer {
+.titleContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  padding-left: 255px;
   font-family: "Caviar Dreams";
   font-size: 45px;
+  column-gap: 50px;
+  padding-top: 50px;
 }
 
-.orderTitleContainer {  display: flex;
-  color: black;
-  /* font-family: "Caviar Dreams"; */
-  font-size: 45px;
+.order {
+  display: flex;
+  column-gap: 20px;
+  align-self: center;
+  width: 700px;
+  padding-left: 200px;
+  font-weight: bold;
 }
 
-.orderTitle {
-  flex: 1;
+.orderLink {
+  text-decoration: underline;
+  width: 1000px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.spacer4 {
+  width: 1px;
+  height: 1px;
+}
+.instaLink {
+  text-decoration: underline;
+  color: #F2C94C;
+
+}
+.orderpay {
+  /* display: flex; */
+  /* flex: 1; */
+  /* row-gap: 20px; */
+    /* justify-content: center; */
+    width: 800px;
+    font-variant: underline;
+    /* padding-left: 450px; */
+}
+.specials {
+  display: flex;
+  column-gap: 20px;
+  /* align-self: center; */
+  width: 700px;
+  padding-left: 190px;
+  font-weight: bold;
+}
+
+.spacer {
+  width: 275px;
+  
+  /* height: 250px; */
+}
+.lineDeco {
+  height: 24px;
+  width: 52px;
+  margin-top: 15px;
+}
+
+.yellowContainer {
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-wrap: nowrap; */
   font-family: "Caviar Dreams";
-  font-size: 45px;
+  font-size: 22px;
+  /* column-gap: 15px; */
+  /* text-align: center; */
+  justify-content: center;
+  /* padding-left: 120px; */
+  /* padding-right: 50px; */
+  width: 100%;
+  font-weight: bold;
+  color: #F2C94C;
+ 
 }
 
-.orderLinkContainer {
-  flex: 1;
-  color: #D0AF3D;
-  justify-content: center;
+.specialsURL {
+  /* display: flex; */
+    /* column-gap: 10px; */
+    /* text-align: center; */
+    width: 1000px;
+    /* padding-left: 5px; */
+}
+
+.specialsBottom {
+  width: 100%;
+  display: flex;
+  column-gap: 5px;
+}
+.spacer1 {
+  max-width: 5px;
+  height: 0px;
+  /* width: 0 auto; */
+
 }
 
 .uberContainer {
-  flex: 1;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "Caviar Dreams";
+  font-size: 22px;
+  /* column-gap: 750px; */
+  /* justify-content: center; */
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  /* height: 100px; */
 }
 
 .uberEats {
-  flex: 1;
-  justify-content: center;
-
+  text-align: center;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
 }
 
-.uberImage {
-  flex: 1;
-  /* justify-content: center; */
+.squareImageContainer {
+  display: flex;
+  width: 100%;
+  /* align-self: center; */
+  justify-content: center;
+  /* padding-left: 5px; */
+}
+
+.uber {
+  height: 464px;
+  width: 464px;
+  pad
+}
+.specialsImage {
   height: 464px;
   width: 464px;
 }
 
-.twitterLink { flex: 1;
-  justify-content: center;
-  color: #D0AF3D;
-}
-
-
-/* second Column */
-.specialMenuContainer {
+.socialLinksContainer {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  width:100%;
+  padding-left: 550px;
 }
 
-.specialTitleContainer {
-  display: flex;
-  flex-direction: row;
-}
-
-.specialTitle {
-  flex: 1;
-  justify-content: center;
-}
-.instagramContainer {
-  flex: 1;
-
-}
-
-.instagramLink {
-  flex: 1;
-  text-align: center;
-}
-
-.specialsImage {
-  max-height: 464px;
-  max-width: 464px;
-  flex: 1;
-  justify-content: center;
-}
-
-.followUsContainer {
-  flex: 1;
-  justify-content: center;
-}
-
-.followUs {
-  flex: 1;
-  justify-content: center;
+.spacer2 {
+  width: 450px;
 }
 
 .facebook {
-  flex: 1;
-  height: 48px;
-  width: 48px;
+  width: 50px;
+  height: 50px;
 }
 
 .instagram {
-  flex: 1;
-  height: 48px;
-  width: 48px;
+  width: 50px;
+  height: 50px;
 }
 
 .twitter {
-  flex: 1;
-  height: 48px;
-  width: 48px;
+  width: 50px;
+  height: 50px;
 }
 
+.rightSocial {
+  display: flex;
+}
+
+.spacer3 {
+  width: 30px;
+}
+
+.spacer4 {
+  max-width:25px;
+}

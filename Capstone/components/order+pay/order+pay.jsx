@@ -18,35 +18,14 @@ const OrderRedirect = () => {
           <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
         </div>
       </div>
+      <div className="orderpay">
+        <a href="govindashou.com/onlinepay" className="orderLink">
+          Order & Pay Online
+        </a>
+      </div>
+      <div className="yellowContainer"></div>
+     
 
-      <div className="yellowContainer">
-        <br />
-        <div className="orderpay">
-          <a href="govindashou.com/onlinepay" className="orderLink">
-            Order & Pay Online
-          </a>
-        </div>
-        <div className="specialsURL">
-          <p className="specialsBottom">
-            Keep up with daily specials on
-            <img src="../assets/spacer.png" className="spacer4" />
-            <a
-              href="https://www.instagram.com/govindashou/"
-              className="instaLink"
-            >
-              Instagram
-            </a>
-            !
-          </p>
-        </div>
-      </div>
-      <br />
-      <div className="uberContainer">
-        <span className="uberEats">
-          UberEats can bring the yummies to you now. (First time orders receive
-          10% discount)
-        </span>
-      </div>
       <br />
       <div className="squareImageContainer">
         <img src="../assets/uberImage.png" className="uber" />
@@ -60,10 +39,16 @@ const OrderRedirect = () => {
         <div className="leftSocial">
           <span className="twitterLink">
             View Our Daily Specials on
-            <a href="https://t.co/fuk6Nlwki8" className="tweet">
+            <span href="https://t.co/fuk6Nlwki8" className="tweet">
+              {" "}
               Twitter
+            </span>{" "}
+            &
+            <a href="https://www.instagram.com/govindashou/" className="insta">
+              {" "}
+              Instagram
             </a>
-            !
+            .
           </span>
         </div>
         <img src="../assets/spacer.png" className="spacer2" />
@@ -85,7 +70,14 @@ const OrderRedirect = () => {
           />
         </div>
       </div>
+      <div className="uberContainer">
+        <span className="uberEats">
+          UberEats can bring the yummies to you now. (First time orders receive
+          10% discount)
+        </span>
+      </div>
     </div>
+    
   );
 };
 

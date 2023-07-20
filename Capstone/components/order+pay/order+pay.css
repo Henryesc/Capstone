@@ -4,17 +4,16 @@
   padding-left: 10px;
   padding-right: 10px;
   justify-content: center;
-  
 }
 
 .titleContainer {
   display: flex;
-  /* flex-direction: column; */
   padding-left: 255px;
   font-family: "Caviar Dreams";
   font-size: 45px;
   column-gap: 50px;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .order {
@@ -37,24 +36,24 @@
   width: 1px;
   height: 1px;
 }
+
 .instaLink {
   text-decoration: underline;
   color: #F2C94C;
+}
 
-}
 .orderpay {
-  /* display: flex; */
-  /* flex: 1; */
-  /* row-gap: 20px; */
-    /* justify-content: center; */
+  padding-left: 575px;
     width: 800px;
-    font-variant: underline;
-    /* padding-left: 450px; */
+   font-family: "Caviar Dreams";
+   font-size: 22px;
+   font-weight: bold;
+   color: #F2C94C;
 }
+
 .specials {
   display: flex;
   column-gap: 20px;
-  /* align-self: center; */
   width: 700px;
   padding-left: 190px;
   font-weight: bold;
@@ -62,9 +61,8 @@
 
 .spacer {
   width: 275px;
-  
-  /* height: 250px; */
 }
+
 .lineDeco {
   height: 24px;
   width: 52px;
@@ -73,27 +71,16 @@
 
 .yellowContainer {
   display: flex;
-  /* flex-direction: column; */
-  /* flex-wrap: nowrap; */
   font-family: "Caviar Dreams";
   font-size: 22px;
-  /* column-gap: 15px; */
-  /* text-align: center; */
   justify-content: center;
-  /* padding-left: 120px; */
-  /* padding-right: 50px; */
   width: 100%;
   font-weight: bold;
   color: #F2C94C;
- 
 }
 
 .specialsURL {
-  /* display: flex; */
-    /* column-gap: 10px; */
-    /* text-align: center; */
     width: 1000px;
-    /* padding-left: 5px; */
 }
 
 .specialsBottom {
@@ -101,11 +88,10 @@
   display: flex;
   column-gap: 5px;
 }
+
 .spacer1 {
   max-width: 5px;
   height: 0px;
-  /* width: 0 auto; */
-
 }
 
 .uberContainer {
@@ -114,12 +100,10 @@
   flex-wrap: wrap;
   font-family: "Caviar Dreams";
   font-size: 22px;
-  /* column-gap: 750px; */
-  /* justify-content: center; */
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 50px;
   width: 100%;
-  /* height: 100px; */
 }
 
 .uberEats {
@@ -131,16 +115,14 @@
 .squareImageContainer {
   display: flex;
   width: 100%;
-  /* align-self: center; */
   justify-content: center;
-  /* padding-left: 5px; */
 }
 
 .uber {
   height: 464px;
   width: 464px;
-  pad
 }
+
 .specialsImage {
   height: 464px;
   width: 464px;
@@ -148,28 +130,33 @@
 
 .socialLinksContainer {
   display: flex;
-  /* flex-direction: column; */
   width:100%;
-  padding-left: 550px;
+  padding-left: 450px;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .spacer2 {
-  width: 450px;
+  width: 138px;
 }
 
 .facebook {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
 
 .instagram {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
 
 .twitter {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
 
 .rightSocial {
@@ -182,4 +169,24 @@
 
 .spacer4 {
   max-width:25px;
+}
+
+.leftSocial {
+  padding-top: 20px;
+  min-width: 600px;
+  padding-left: 10px;
+}
+
+.followUs {
+  padding-top: 20px;
+}
+
+.insta {
+  color: #F2C94C;
+  cursor: pointer;
+}
+
+.tweet {
+  color: #F2C94C;
+  cursor: pointer;
 }

@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import '../../src/App.css';
 
 const LeaveReviews = () => {
+  const [name,setName] = useState("")
+  const [description,setDescription] = useState("")
+  const [rating,setRating] = useState(Number)
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(name,description,rating)
+  }
+
+
   return (
     <Reviews>
-      { <div className="main"> 
+      { <form className="main" onSubmit={handleSubmit}> 
         <div className="container">
           <div className="img-container">
             <div></div>
@@ -15,19 +26,19 @@ const LeaveReviews = () => {
               <h1 className="title">Leave A Review</h1>
               <div className="sub-title">We'd Love to hear your Feedback</div>
               <div className="headings" >Name :</div>
-              <input className="fill-ins" type="text" />
+              <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
               <div className="headings" >Comment :</div>
-              <input className="message" type="text" />
+              <input className="message" type="text" onChange={(e) => setDescription(e.target.value)} value={description}/>
               <div className="headings" >Rating :</div>
-              <input className="fill-ins" type="text" />
+              <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
             <div className="btn-container">
-              <button className="btn">Submit</button>
+              <button type='submit' className="btn">Submit</button>
               <div className="discount">Get 10% off your next order when you leave a review</div>
             </div>
             </div>
           </div>
         </div>
-      </div>}
+      </form>}
     </Reviews>
   );
 };

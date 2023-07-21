@@ -36,11 +36,15 @@ const OrderRedirect = () => {
             </a>
             .
           </span>
+        </div>        
+      </div>
+
         </div>
         
       </div>
 
         </div>
+
         <div className="section">
           <div className="specials">
             <img src="linedeco.png" className="lineDeco" alt="line" />
@@ -69,10 +73,11 @@ const OrderRedirect = () => {
 
 
 
+
+
         </div>
       </div>
     </div>
-    
   );
 };
 

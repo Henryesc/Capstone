@@ -7,9 +7,51 @@ const OrderRedirect = () => {
     <div className="redirectSpecialsContainer">
       <div className="titleContainer">
         <div className="order">
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <svg
+            width="51"
+            height="14"
+            viewBox="0 0 51 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group 1261153700">
+              <path
+                id="Vector 32"
+                d="M1 1.75L25.5 12.25L50 1.75"
+                stroke="#D0AF3D"
+                stroke-width="2"
+              />
+              <path
+                id="Vector 33"
+                d="M1 12.25L25.5 1.75L50 12.25"
+                stroke="#D0AF3D"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
           <span className="orderTitle">ORDER ONLINE</span>
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <svg
+            width="51"
+            height="14"
+            viewBox="0 0 51 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group 1261153700">
+              <path
+                id="Vector 32"
+                d="M1 1.75L25.5 12.25L50 1.75"
+                stroke="#D0AF3D"
+                stroke-width="2"
+              />
+              <path
+                id="Vector 33"
+                d="M1 12.25L25.5 1.75L50 12.25"
+                stroke="#D0AF3D"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
         </div>
 
         <div className="specials">
@@ -24,7 +66,6 @@ const OrderRedirect = () => {
         </a>
       </div>
       <div className="yellowContainer"></div>
-     
 
       <br />
       <div className="squareImageContainer">
@@ -77,7 +118,6 @@ const OrderRedirect = () => {
         </span>
       </div>
     </div>
-    
   );
 };
 

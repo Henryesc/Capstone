@@ -16,7 +16,9 @@ const Header = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate("/");
   const handleNavClick = (e) => {
-    setIsOpen(!isOpen);
+    if(windowWidth <= 992) {
+      setIsOpen(!isOpen);
+    }
   };
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

@@ -4,14 +4,35 @@ import '../../src/App.css';
 
 const LeaveReviews = () => {
   const [name,setName] = useState("")
-  const [description,setDescription] = useState("")
-  const [rating,setRating] = useState(Number)
+  const [comment,setComment] = useState("")
+  const [rating,setRating] = useState(5)
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(name,description,rating)
+    try {
+      const response = await fetch("http://localhost:8080/add-review", {
+        method:"POST", 
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Headers": "*",
+        },
+        body:JSON.stringify({
+          rating: rating,
+          comment: comment,
+          name: name,
+        }),
+      })
+      const data = await response.json();
+      setName("")
+      setComment("")
+      setRating(5)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
   }
+
 
 
   return (
@@ -28,7 +49,7 @@ const LeaveReviews = () => {
               <div className="headings" >Name :</div>
               <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
               <div className="headings" >Comment :</div>
-              <input className="message" type="text" onChange={(e) => setDescription(e.target.value)} value={description}/>
+              <input className="message" type="text" onChange={(e) => setComment(e.target.value)} value={comment}/>
               <div className="headings" >Rating :</div>
               <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
             <div className="btn-container">

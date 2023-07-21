@@ -6,76 +6,21 @@ const OrderRedirect = () => {
   return (
     <div className="redirectSpecialsContainer">
       <div className="titleContainer">
-        <div className="order">
-          <svg
-            width="51"
-            height="14"
-            viewBox="0 0 51 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Group 1261153700">
-              <path
-                id="Vector 32"
-                d="M1 1.75L25.5 12.25L50 1.75"
-                stroke="#D0AF3D"
-                stroke-width="2"
-              />
-              <path
-                id="Vector 33"
-                d="M1 12.25L25.5 1.75L50 12.25"
-                stroke="#D0AF3D"
-                stroke-width="2"
-              />
-            </g>
-          </svg>
-          <span className="orderTitle">ORDER ONLINE</span>
-          <svg
-            width="51"
-            height="14"
-            viewBox="0 0 51 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Group 1261153700">
-              <path
-                id="Vector 32"
-                d="M1 1.75L25.5 12.25L50 1.75"
-                stroke="#D0AF3D"
-                stroke-width="2"
-              />
-              <path
-                id="Vector 33"
-                d="M1 12.25L25.5 1.75L50 12.25"
-                stroke="#D0AF3D"
-                stroke-width="2"
-              />
-            </g>
-          </svg>
-        </div>
-
-        <div className="specials">
-          <img src="linedeco.png" className="lineDeco" alt="line" />
-          <span className="specialTitle"> SPECIAL MENU</span>
-          <img src="linedeco.png" className="lineDeco" alt="line" />
-        </div>
-      </div>
+        <div className="section">
+          <div className="order">
+            <img src="linedeco.png" className="lineDeco" alt="line" />
+            <span className="orderTitle">ORDER ONLINE</span>
+            <img src="linedeco.png" className="lineDeco" alt="line" />
+          </div>
       <div className="orderpay">
         <a href="govindashou.com/onlinepay" className="orderLink">
           Order & Pay Online
         </a>
       </div>
-      <div className="yellowContainer"></div>
-
-      <br />
-      <div className="squareImageContainer">
+        <div className="description">UberEats can bring the yummies to you now! (Get 10%off first order)</div>
+      <div> 
         <img src="uberImage.png" className="uber" />
-        <img src="spacer.png" className="spacer" />
-        <br />
-        <br />
-        <img src="specials.png" className="specialsImage" />
       </div>
-      <br />
       <div className="socialLinksContainer">
         <div className="leftSocial">
           <span className="twitterLink">
@@ -92,12 +37,23 @@ const OrderRedirect = () => {
             .
           </span>
         </div>
-        <img src="spacer.png" className="spacer2" />
-        <div className="rightSocial">
-          <span className="followUs">Follow Us On Social Media!</span>
-          <br />
-          <img src="spacer.png" className="spacer3" />
-          <br />
+        
+      </div>
+
+        </div>
+        <div className="section">
+          <div className="specials">
+            <img src="linedeco.png" className="lineDeco" alt="line" />
+            <span className="specialTitle"> SPECIAL MENU</span>
+            <img src="linedeco.png" className="lineDeco" alt="line" />
+          </div>
+          <span className="keep-up">Keep up with specials: <span className="insta">iNSTAGRAM</span></span>
+          <div>
+          <div className="description">Make sure to follow us on social media to see our latest menu additions</div>
+          </div>
+          <img src="specials.png" className="specialsImage" />
+          <div className="rightSocial">
+          <span className="followUs">Follow Us On Social Media :</span>
           <img src="facebook.png" className="facebook" href="" />
           <img
             src="instagram.png"
@@ -110,12 +66,9 @@ const OrderRedirect = () => {
             href="https://t.co/fuk6Nlwki8"
           />
         </div>
-      </div>
-      <div className="uberContainer">
-        <span className="uberEats">
-          UberEats can bring the yummies to you now. (First time orders receive
-          10% discount)
-        </span>
+
+
+        </div>
       </div>
     </div>
   );

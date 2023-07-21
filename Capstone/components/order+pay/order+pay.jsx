@@ -40,11 +40,6 @@ const OrderRedirect = () => {
       </div>
 
         </div>
-        
-      </div>
-
-        </div>
-
         <div className="section">
           <div className="specials">
             <img src="linedeco.png" className="lineDeco" alt="line" />
@@ -70,9 +65,6 @@ const OrderRedirect = () => {
             href="https://t.co/fuk6Nlwki8"
           />
         </div>
-
-
-
 
 
         </div>

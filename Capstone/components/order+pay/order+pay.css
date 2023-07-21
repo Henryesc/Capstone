@@ -16,6 +16,7 @@
   justify-content: center;
   column-gap: 2%;
 }
+
 .specialTitle{
   color: #000;
 font-family: Caviar Dreams;
@@ -26,6 +27,7 @@ line-height: normal;
 letter-spacing: 2.25px;
 text-transform: uppercase;
 }
+
 
 .keep-up{
   display: flex;

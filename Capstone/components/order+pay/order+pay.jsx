@@ -36,6 +36,9 @@ const OrderRedirect = () => {
             </a>
             .
           </span>
+        </div>        
+      </div>
+
         </div>
         
       </div>
@@ -71,7 +74,6 @@ const OrderRedirect = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 

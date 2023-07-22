@@ -53,17 +53,21 @@ const OrderRedirect = () => {
           <img src="specials.png" className="specialsImage" />
           <div className="rightSocial">
           <span className="followUs">Follow Us On Social Media :</span>
-          <img src="facebook.png" className="facebook" href="" />
+           <a href="https://www.facebook.com/GovindasHouston/" target="_blank">
+           <img src="facebook.png" className="facebook" href="" />
+           </a>
+          <a href="https://www.instagram.com/govindashou/" target="_blank">
           <img
             src="instagram.png"
             className="instagram"
-            href="https://www.instagram.com/govindashou/"
           />
+          </a>
+          <a href="https://twitter.com/GovindashouM" target="_blank">
           <img
             src="twitter.png"
             className="twitter"
-            href="https://t.co/fuk6Nlwki8"
           />
+          </a>
         </div>
 
 

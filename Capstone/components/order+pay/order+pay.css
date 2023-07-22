@@ -215,6 +215,7 @@ text-transform: uppercase;
   display: flex;
   height: 5%;
   align-items: center;
+  column-gap: 6px;
 }
 
 .spacer3 {

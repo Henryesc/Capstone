@@ -246,3 +246,28 @@ text-transform: uppercase;
   color: #F2C94C;
   cursor: pointer;
 }
+
+
+@media (max-width: 375px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: "Caviar Dreams";
+    font-size: 45px;
+    padding: 50px 0px 50px 0px;
+    justify-content: center;
+    column-gap: 2%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: "Caviar Dreams";
+    font-size: 45px;
+    padding: 50px 0px 50px 0px;
+    justify-content: center;
+    column-gap: 2%;
+  }
+}

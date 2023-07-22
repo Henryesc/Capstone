@@ -283,4 +283,12 @@ const Menu = styled.section`
     opacity: 0.20000000298023224;
     background: #000;
   }
+  @media (max-width: 1640px) {
+    .container {
+      width: 75%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 `;

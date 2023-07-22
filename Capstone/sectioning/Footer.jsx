@@ -241,4 +241,14 @@ const FooterContainer = styled.section`
     width: 20px;
     height: 20px;
   }
+  @media (max-width: 1440px) {
+    .info {
+      padding-top: 40px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
 `;

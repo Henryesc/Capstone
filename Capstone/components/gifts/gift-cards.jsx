@@ -1,34 +1,69 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import '../../src/App.css';
-
+import "../../src/App.css";
 
 const GiftCards = () => {
+  const [amount, setAmount] = useState("");
+  const [destinatary, setDestinatary] = useState("");
+  const [buyer, setBuyer] = useState("");
+  const [comment, setComment] = useState("");
+
+  const handleChange = (setState) => (e) => {
+    setState(e.target.value);
+  };
+  
+  const handleSubmit = () => {
+    
+  }
+
   return (
     <Gift>
-      <div className="main"> 
+      <div className="main">
         <div className="container">
           <div className="img-container">
             <img className="img" src="Rectangle 34624185.png" alt="" />
           </div>
-          <div className="info-section">
+          <form className="info-section">
             <div className="info-container">
               <h1 className="title">Gift Cards</h1>
-              <div className="sub-title">Purchase an Instant Gift Certificate to Govindas Vegetarian Cuisine</div>
-              <div className="headings" >Gift Amount</div>
-              <input className="fill-ins" type="text" />
+              <div className="sub-title">
+                Purchase an Instant Gift Certificate to Govindas Vegetarian
+                Cuisine
+              </div>
+              <div className="headings">Gift Amount</div>
+              <input
+                className="fill-ins"
+                type="text"
+                value={amount}
+                onChange={handleChange(setAmount)}
+              />
               <div className="headings">To :</div>
-              <input className="fill-ins" type="text" />
-              <div className="headings" >From :</div>
-              <input className="fill-ins" type="text" />
-              <div className="headings" >Include a gift message (optinal)</div>
-              <input className="message" type="text" />
-            <div className="btn-container">
-              <button className="btn">Add To Cart</button>
-              <div className="discount">Get 10% off first order</div>
+              <input
+                className="fill-ins"
+                type="text"
+                value={destinatary}
+                onChange={handleChange(setDestinatary)}
+              />
+              <div className="headings">From :</div>
+              <input
+                className="fill-ins"
+                type="text"
+                value={buyer}
+                onChange={handleChange(setBuyer)}
+              />
+              <div className="headings">Include a gift message (optinal)</div>
+              <input
+                className="message"
+                type="text"
+                value={comment}
+                onChange={handleChange(setComment)}
+              />
+              <div className="btn-container">
+                <button type="submit" className="btn">Add To Cart</button>
+                <div className="discount">Get 10% off first order</div>
+              </div>
             </div>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </Gift>
@@ -38,42 +73,42 @@ const GiftCards = () => {
 export default GiftCards;
 
 const Gift = styled.section`
-  .main{
+  .main {
     height: 1229px;
     width: 100%;
     display: flex;
     flex-shrink: 0;
     background-color: rgba(252, 248, 239, 0.959);
   }
-  .container{
+  .container {
     width: 100%;
-    display: flex; 
+    display: flex;
     justify-content: center;
   }
-  .img-container{
+  .img-container {
     display: flex;
     align-items: center;
     flex: 0;
-    padding: 0px 2% 0px 5%; 
+    padding: 0px 2% 0px 5%;
   }
-  .img{
+  .img {
     width: 686px;
     height: 898px;
     flex-shrink: 0;
   }
-  .info-section{
+  .info-section {
     display: flex;
     flex-direction: column;
     // flex: 1;
     justify-content: center;
   }
-  .info-container{
+  .info-container {
     display: flex;
     flex-direction: column;
     align-self: center;
     align-content: space-around;
   }
-  .title{ 
+  .title {
     color: #000;
     font-family: Caviar Dreams;
     font-size: 33px;
@@ -83,7 +118,7 @@ const Gift = styled.section`
     letter-spacing: 2.75px;
     text-transform: uppercase;
   }
-  .sub-title{
+  .sub-title {
     color: #595555;
     font-family: Josefin Sans;
     font-size: 22px;
@@ -91,7 +126,7 @@ const Gift = styled.section`
     font-weight: 500;
     line-height: normal;
   }
-  .headings{
+  .headings {
     color: #000;
     font-family: Caviar Dreams;
     font-size: 18px;
@@ -100,31 +135,31 @@ const Gift = styled.section`
     line-height: normal;
     margin-bottom: 2px;
   }
-  .fill-ins{
+  .fill-ins {
     width: 730px;
     height: 65px;
     flex-shrink: 0;
     margin: 10px 0px 10px 0px;
   }
-  .message{
+  .message {
     width: 730px;
     height: 166px;
     flex-shrink: 0;
-    fill: #FFF;
+    fill: #fff;
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.34);
   }
-  .btn-container{
+  .btn-container {
     display: flex;
     padding: 10% 0px 0px 0px;
     column-gap: 10%;
   }
-  .btn{
+  .btn {
     width: 240px;
     height: 70px;
     flex-shrink: 0;
-    color: #FFF;
-    background: #D0AF3D;
+    color: #fff;
+    background: #d0af3d;
     font-family: Open Sans Condensed;
     font-size: 22px;
     font-style: normal;
@@ -134,7 +169,7 @@ const Gift = styled.section`
     text-transform: uppercase;
     border: 0px;
   }
-  .discount{
+  .discount {
     display: flex;
     align-self: center;
     color: #000;
@@ -144,4 +179,4 @@ const Gift = styled.section`
     font-weight: 400;
     line-height: 40px; /* 160% */
   }
-`
+`;

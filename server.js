@@ -1,6 +1,5 @@
 const express = require("express");
 const server = express();
-const es6Renderer = require("express-es6-template-engine")
 const pgp = require("pg-promise")()
 require("dotenv").config()
 const db = pgp(process.env.URL)

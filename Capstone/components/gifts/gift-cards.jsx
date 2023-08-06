@@ -1,69 +1,208 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import mobile_image from "/gift-card/gift-card.jpg";
+import desktop_image from "/gift-card/gift-card-desktop.jpg";
 import "../../src/App.css";
 
 const GiftCards = () => {
   const [amount, setAmount] = useState("");
-  const [destinatary, setDestinatary] = useState("");
-  const [buyer, setBuyer] = useState("");
+  const [destinataryFirstName, setDestinataryFirstName] = useState("");
+  const [destinataryLastName, setDestinataryLastName] = useState("");
+  const [destinataryEmail, setDestinataryEmail] = useState("");
+  const [destinataryPhone, setDestinataryPhone] = useState("");
+  const [buyerFirstName, setBuyerFirstName] = useState("");
+  const [buyerLastName, setBuyerLastName] = useState("");
+  const [buyerEmail, setBuyerEmail] = useState("");
+  const [buyerPhone, setBuyerPhone] = useState("");
   const [comment, setComment] = useState("");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleWindowResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   const handleChange = (setState) => (e) => {
     setState(e.target.value);
   };
-  
-  const handleSubmit = () => {
-    
-  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const InputFields = {
+      buyer: {
+        email: buyerEmail,
+        first_name: buyerFirstName,
+        last_name: buyerLastName,
+        phone: buyerPhone,
+      },
+      recipient: {
+        email: destinataryEmail,
+        first_name: destinataryFirstName,
+        last_name:destinataryLastName,
+        phone: destinataryPhone,
+      },
+      comment: comment,
+    };
+
+    console.log(InputFields)
+  };
+
 
   return (
     <Gift>
       <div className="main">
         <div className="container">
           <div className="img-container">
-            <img className="img" src="Rectangle 34624185.png" alt="" />
+            <img
+              className="img"
+              src={windowWidth >= 920 ? desktop_image : mobile_image}
+              alt=""
+            />
           </div>
-          <form className="info-section">
+          <FormContainer onSubmit={handleSubmit}>
             <div className="info-container">
               <h1 className="title">Gift Cards</h1>
               <div className="sub-title">
                 Purchase an Instant Gift Certificate to Govindas Vegetarian
                 Cuisine
               </div>
-              <div className="headings">Gift Amount</div>
-              <input
-                className="fill-ins"
-                type="text"
-                value={amount}
-                onChange={handleChange(setAmount)}
-              />
-              <div className="headings">To :</div>
-              <input
-                className="fill-ins"
-                type="text"
-                value={destinatary}
-                onChange={handleChange(setDestinatary)}
-              />
-              <div className="headings">From :</div>
-              <input
-                className="fill-ins"
-                type="text"
-                value={buyer}
-                onChange={handleChange(setBuyer)}
-              />
-              <div className="headings">Include a gift message (optinal)</div>
-              <input
-                className="message"
-                type="text"
-                value={comment}
-                onChange={handleChange(setComment)}
-              />
-              <div className="btn-container">
-                <button type="submit" className="btn">Add To Cart</button>
-                <div className="discount">Get 10% off first order</div>
-              </div>
+              <WrapContainer>
+                <Headings>
+                  <Label htmlFor="amount">Amount:</Label>
+                  <InputField
+                    id="amount"
+                    type="text"
+                    value={amount}
+                    onChange={handleChange(setAmount)}
+                    list="amount-list"
+                    placeholder="Add amount"
+                    required
+                  />
+                  <datalist id="amount-list">
+                    <option value="25" />
+                    <option value="50" />
+                    <option value="75" />
+                    <option value="100" />
+                  </datalist>
+                </Headings>
+                <TextWrapper>
+                  <span>Purchaser's Info</span>
+                </TextWrapper>
+                <Headings>
+                  <Label htmlFor="buyer">From:</Label>
+                  <FlexContainer>
+                    <InputField
+                      id="buyer"
+                      type="text"
+                      value={buyerFirstName}
+                      onChange={handleChange(setBuyerFirstName)}
+                      placeholder="First Name"
+                      required
+                    />
+                    <InputField
+                      id="buyer"
+                      type="text"
+                      value={buyerLastName}
+                      onChange={handleChange(setBuyerLastName)}
+                      placeholder="Last Name"
+                      required
+                    />
+                  </FlexContainer>
+                </Headings>
+                <Headings>
+                  <Label htmlFor="buyer-email">Email:</Label>
+                  <InputField
+                    id="buyer-email"
+                    type="email"
+                    value={buyerEmail}
+                    onChange={handleChange(setBuyerEmail)}
+                    placeholder="gift-card@mail.com"
+                    required
+                  />
+                </Headings>
+                <Headings>
+                  <Label htmlFor="buyer-phone">Phone Number:</Label>
+                  <InputField
+                    id="buyer-phone"
+                    type="tel"
+                    value={buyerPhone}
+                    onChange={handleChange(setBuyerPhone)}
+                    placeholder=""
+                    required
+                  />
+                </Headings>
+                <TextWrapper>
+                  <span>Recipient's Info</span>
+                </TextWrapper>
+                <Headings>
+                  <Label htmlFor="destinatary">To:</Label>
+                  <FlexContainer>
+                    <InputField
+                      id="destinatary"
+                      type="text"
+                      value={destinataryFirstName}
+                      onChange={handleChange(setDestinataryFirstName)}
+                      placeholder="First Name"
+                      required
+                    />
+                    <InputField
+                      id="destinatary"
+                      type="text"
+                      value={destinataryLastName}
+                      onChange={handleChange(setDestinataryLastName)}
+                      placeholder="Last Name"
+                      required
+                    />
+                  </FlexContainer>
+                </Headings>
+                <Headings>
+                  <Label htmlFor="destinatary-email">Email:</Label>
+                  <InputField
+                    id="destinatary-email"
+                    type="email"
+                    value={destinataryEmail}
+                    onChange={handleChange(setDestinataryEmail)}
+                    placeholder="gift-card@mail.com"
+                    required
+                  />
+                </Headings>
+                <Headings>
+                  <Label htmlFor="destinatary-phone">Phone Number:</Label>
+                  <InputField
+                    id="destinatary-phone"
+                    type="tel"
+                    value={destinataryPhone}
+                    onChange={handleChange(setDestinataryPhone)}
+                    placeholder=""
+                    required
+                  />
+                </Headings>
+                <Headings>
+                  <LabelOptional htmlFor="comment">
+                    Message: (optional)
+                  </LabelOptional>
+                  <TextAreaField
+                    id="comment"
+                    className="fill-ins message"
+                    type="text"
+                    value={comment}
+                    onChange={handleChange(setComment)}
+                  />
+                </Headings>
+                <div className="btn-container">
+                  <button type="submit" className="btn">
+                    Add To Cart
+                  </button>
+                  <div className="discount">Get 10% off first order</div>
+                </div>
+              </WrapContainer>
             </div>
-          </form>
+          </FormContainer>
         </div>
       </div>
     </Gift>
@@ -74,7 +213,7 @@ export default GiftCards;
 
 const Gift = styled.section`
   .main {
-    height: 1229px;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-shrink: 0;
@@ -82,31 +221,37 @@ const Gift = styled.section`
   }
   .container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .img-container {
-    display: flex;
-    align-items: center;
-    flex: 0;
-    padding: 0px 2% 0px 5%;
-  }
-  .img {
-    width: 686px;
-    height: 898px;
-    flex-shrink: 0;
-  }
-  .info-section {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    // flex: 1;
     justify-content: center;
+    gap: 24px;
+    @media (width >= 920px) {
+      flex-direction: row;
+    }
+  }
+  .img-container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    object-fit: cover;
+    object-position: center;
+    flex: 1;
+    @media (width >= 920px) {
+      height: auto;
+    }
+  }
+  .img {
+    width: 100%;
+    height: 100%;
   }
   .info-container {
     display: flex;
     flex-direction: column;
     align-self: center;
     align-content: space-around;
+    width: 90%;
   }
   .title {
     color: #000;
@@ -126,37 +271,23 @@ const Gift = styled.section`
     font-weight: 500;
     line-height: normal;
   }
-  .headings {
-    color: #000;
-    font-family: Caviar Dreams;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 2px;
+
+  .required::after {
+    content: "*";
+    color: #ee3a3a;
+    padding-left: 4px;
   }
-  .fill-ins {
-    width: 730px;
-    height: 65px;
-    flex-shrink: 0;
-    margin: 10px 0px 10px 0px;
-  }
-  .message {
-    width: 730px;
-    height: 166px;
-    flex-shrink: 0;
-    fill: #fff;
-    stroke-width: 1px;
-    stroke: rgba(0, 0, 0, 0.34);
+
+  input:focus {
+    border: 1px solid #d0af3d;
   }
   .btn-container {
     display: flex;
-    padding: 10% 0px 0px 0px;
+    padding-top: 24px;
     column-gap: 10%;
   }
   .btn {
-    width: 240px;
-    height: 70px;
+    padding: 18px 24px;
     flex-shrink: 0;
     color: #fff;
     background: #d0af3d;
@@ -168,7 +299,13 @@ const Gift = styled.section`
     letter-spacing: 2.2px;
     text-transform: uppercase;
     border: 0px;
+    border-radius: 8px;
   }
+
+  .btn:hover {
+    box-shadow: 0px 0px 1px 1px #d0b03d;
+  }
+
   .discount {
     display: flex;
     align-self: center;
@@ -179,4 +316,78 @@ const Gift = styled.section`
     font-weight: 400;
     line-height: 40px; /* 160% */
   }
+`;
+
+const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 24px 0;
+`;
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+`;
+
+const WrapContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+`;
+
+const TextWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+  font-family: "Josefin Sans";
+  font-size: 22px;
+  padding: 12px 0;
+`;
+
+const Headings = styled.div`
+  color: #000;
+  font-family: "Caviar Dreams";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 2px;
+  width: 100%;
+`;
+
+const Label = styled.label`
+  &::after {
+    content: "*";
+    color: #ee3a3a;
+    padding-left: 4px;
+  }
+`;
+
+const LabelOptional = styled.label`
+  &::after {
+    content: "";
+  }
+`;
+
+const InputField = styled.input`
+  width: 100%;
+  height: 65px;
+  flex: 1;
+  margin: 10px 0px 10px 0px;
+  padding: 12px;
+`;
+
+const TextAreaField = styled.textarea`
+  width: 100%;
+  height: 166px;
+  flex: 1;
+  margin: 10px 0px 10px 0px;
+  padding: 12px;
+  fill: #fff;
+  resize: none;
+  outline: none;
 `;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"
 import styled from "styled-components";
 import mobile_image from "/gift-card/gift-card.jpg";
 import desktop_image from "/gift-card/gift-card-desktop.jpg";
@@ -16,6 +17,7 @@ const GiftCards = () => {
   const [buyerPhone, setBuyerPhone] = useState("");
   const [comment, setComment] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const location = useLocation()
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -30,10 +32,11 @@ const GiftCards = () => {
     setState(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const InputFields = {
+    const inputFields = {
+      product_name: "gift_card",
       buyer: {
         email: buyerEmail,
         first_name: buyerFirstName,
@@ -43,15 +46,37 @@ const GiftCards = () => {
       recipient: {
         email: destinataryEmail,
         first_name: destinataryFirstName,
-        last_name:destinataryLastName,
+        last_name: destinataryLastName,
         phone: destinataryPhone,
       },
       comment: comment,
+      id: "xdsdsas",
+      amount: amount * 100,
+      quantity: 1,
+      location
     };
 
-    console.log(InputFields)
-  };
+    try {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(inputFields),
+      };
+      const response = await fetch(
+        "http://localhost:8080/create-checkout-session",
+        options
+      );
 
+      const data = await response.json();
+      console.log("data from /gift-card", data.url);
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <Gift>

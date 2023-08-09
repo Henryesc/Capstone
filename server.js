@@ -5,12 +5,15 @@ const pgp = require("pg-promise")();
 const db = pgp(process.env.URL);
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
-const RUNNINGPORT = process.env.PORT || 3030
+const PORT = process.env.PORT || 3030
+const giftCardsRouter = require("./routes/gift_cards");
+
 
 
 server.use(cors({
     origin: ["http://localhost:5173", "https://govindas.vercel.app/", "*"],
-    methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH']
+    methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH'],
+    credentials: true
 }));
 server.use(express.json());
 
@@ -52,36 +55,12 @@ server.post("/gift-card", async (req, res) => {
     // }
 })
 
-server.post('/create-checkout-session', async (req, res) => {
 
-    const product_info = req.body;
-    console.log(product_info)
+// Routes
 
-	try {
-		const session = await stripe.checkout.sessions.create({
-			payment_method_types: ['card'],
-			mode: 'payment',
-			line_items: [
-					{price_data: {
-						currency: 'usd',
-						product_data: {
-							name: product_info.product_name
-						},
-						unit_amount: product_info.amount,
-                    },
-					quantity: product_info.quantity}
-				],
-			// redirect urls 
-			success_url:`http://localhost:8080${product_info.location.pathname}`,
-            })
-            // response url => stripe
-            res.json({url: session.url});
-	} catch (e) {
-		res.status(500).json({ error: e.message})
-	}
-});
+server.use("/", giftCardsRouter)
 
-server.listen(RUNNINGPORT, () => {
-    console.log(`The server is running at PORT ${RUNNINGPORT}`);
+server.listen(PORT, () => {
+    console.log(`The server is running at PORT ${PORT}`);
 });
 

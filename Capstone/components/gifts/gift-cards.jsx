@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import mobile_image from "/gift-card/gift-card.jpg";
 import desktop_image from "/gift-card/gift-card-desktop.jpg";
@@ -17,7 +17,7 @@ const GiftCards = () => {
   const [buyerPhone, setBuyerPhone] = useState("");
   const [comment, setComment] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const location = useLocation()
+  const location = useLocation();
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -36,7 +36,7 @@ const GiftCards = () => {
     e.preventDefault();
 
     const inputFields = {
-      product_name: "gift_card",
+      product_name: "Gift Card",
       buyer: {
         email: buyerEmail,
         first_name: buyerFirstName,
@@ -53,7 +53,7 @@ const GiftCards = () => {
       id: "xdsdsas",
       amount: amount * 100,
       quantity: 1,
-      location
+      location,
     };
 
     try {
@@ -66,15 +66,16 @@ const GiftCards = () => {
         body: JSON.stringify(inputFields),
       };
       const response = await fetch(
-        "http://localhost:8080/create-checkout-session",
+        "http://localhost:8080/buy-gift-card",
         options
       );
-
-      const data = await response.json();
-      console.log("data from /gift-card", data.url);
-
+      if(response.ok) {
+        const data = await response.json();
+        const {url} = data;
+        console.log(url)
+      }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -254,22 +255,32 @@ const Gift = styled.section`
     @media (width >= 920px) {
       flex-direction: row;
     }
+    position: relative;
   }
   .img-container {
     width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
+    max-height: 300px;
     object-fit: cover;
     object-position: center;
     flex: 1;
     @media (width >= 920px) {
       height: auto;
+      max-height: fit-content;
     }
   }
   .img {
+    object-fit: cover;
+    object-position: bottom;
     width: 100%;
     height: 100%;
+    @media (width >= 920px) {
+      float: left;
+      height: 100vh;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      
+    }
   }
   .info-container {
     display: flex;
@@ -308,8 +319,8 @@ const Gift = styled.section`
   }
   .btn-container {
     display: flex;
-    padding-top: 24px;
-    column-gap: 10%;
+    padding-top: 8px;
+    gap: 24px;
   }
   .btn {
     padding: 18px 24px;
@@ -317,7 +328,7 @@ const Gift = styled.section`
     color: #fff;
     background: #d0af3d;
     font-family: Open Sans Condensed;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -349,7 +360,7 @@ const FormContainer = styled.form`
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 24px 0;
+  padding: 60px 0;
 `;
 
 const FlexContainer = styled.div`
@@ -400,10 +411,12 @@ const LabelOptional = styled.label`
 
 const InputField = styled.input`
   width: 100%;
-  height: 65px;
+  height: 36px;
   flex: 1;
-  margin: 10px 0px 10px 0px;
+  margin: 6px 0px 6px 0px;
   padding: 12px;
+  border-radius: 8px;
+  border: 1px solid grey;
 `;
 
 const TextAreaField = styled.textarea`

@@ -17,6 +17,7 @@ const GiftCards = () => {
   const [buyerPhone, setBuyerPhone] = useState("");
   const [comment, setComment] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [stripeUrl, setStripeUrl] = useState("")
   const location = useLocation();
 
   const handleWindowResize = () => {
@@ -27,6 +28,13 @@ const GiftCards = () => {
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
+
+  useEffect(() => {
+    if(stripeUrl && stripeUrl.length) {
+      window.location.replace(stripeUrl)
+    }
+    return () => setStripeUrl("")
+  }, [stripeUrl])
 
   const handleChange = (setState) => (e) => {
     setState(e.target.value);
@@ -72,7 +80,7 @@ const GiftCards = () => {
       if(response.ok) {
         const data = await response.json();
         const {url} = data;
-        console.log(url)
+        url && url.length && setStripeUrl(url)
       }
     } catch (error) {
       console.log(error);

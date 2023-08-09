@@ -133,6 +133,7 @@ const GiftCards = () => {
                     <InputField
                       id="buyer"
                       type="text"
+                      name="fname"
                       value={buyerFirstName}
                       onChange={handleChange(setBuyerFirstName)}
                       placeholder="First Name"
@@ -141,6 +142,7 @@ const GiftCards = () => {
                     <InputField
                       id="buyer"
                       type="text"
+                      name="lname"
                       value={buyerLastName}
                       onChange={handleChange(setBuyerLastName)}
                       placeholder="Last Name"
@@ -183,6 +185,7 @@ const GiftCards = () => {
                       onChange={handleChange(setDestinataryFirstName)}
                       placeholder="First Name"
                       required
+                      name="fname"
                     />
                     <InputField
                       id="destinatary"
@@ -191,6 +194,7 @@ const GiftCards = () => {
                       onChange={handleChange(setDestinataryLastName)}
                       placeholder="Last Name"
                       required
+                      name="lname"
                     />
                   </FlexContainer>
                 </Headings>

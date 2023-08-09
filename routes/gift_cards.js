@@ -11,7 +11,6 @@ router.post('/buy-gift-card', async (req, res) => {
         const product = await stripe.products.retrieve(
             'prod_OPq6f0MEfgaUEu'
           );
-        console.log(product, "product ends here")
 		const session = await stripe.checkout.sessions.create({
 			payment_method_types: ['card'],
 			mode: 'payment',

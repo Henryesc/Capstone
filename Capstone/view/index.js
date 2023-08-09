@@ -5,7 +5,7 @@ import Landing from "./Landing";
 import Menu from "./Menu";
 import OrderPay from "./Order-pay";
 import Error from "./Error";
-import ThankYou from "./ThankYou";
+import Success from "./Success";
 
-export { AboutUs, Contact, GiftCards, Landing, Menu, OrderPay, Error, ThankYou };
+export { AboutUs, Contact, GiftCards, Landing, Menu, OrderPay, Error, Success };
 

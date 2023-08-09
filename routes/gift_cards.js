@@ -33,7 +33,8 @@ router.post('/buy-gift-card', async (req, res) => {
 				],
             customer_email: buyer.email,
 			// redirect urls 
-			success_url: "http://localhost:5173/",
+			success_url: "http://localhost:5173/order/success?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url: "http://localhost:5173/"
             })
             res.json({url: session.url});
 	} catch (e) {

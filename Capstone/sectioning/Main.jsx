@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Landing, AboutUs, Contact, GiftCards, Menu, OrderPay, Error, ThankYou } from "../view";
+import { Landing, AboutUs, Contact, GiftCards, Menu, OrderPay, Error, Success } from "../view";
 
 
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
         <Route path="gift-cards" element={<GiftCards />} />
         <Route path="menus" element={<Menu />} />
         <Route path="order-pay" element={<OrderPay />} />
-        <Route path="thank-you" element={<ThankYou />} />
+        <Route path="order/success" element={<Success />} />
         <Route path="*" element={<Error />} />
       </Routes>
      

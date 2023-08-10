@@ -26,12 +26,13 @@ router.post('/buy-gift-card', async (req, res) => {
                             unit_amount: amount,
                         },
                         quantity: quantity,
-                        adjustable_quantity: {
-                            enabled: true
-                        }
                     }
 				],
             customer_email: buyer.email,
+            metadata: {
+                'order_id': id,
+                'buyer_name': buyer.name,
+              },
 			// redirect urls 
 			success_url: "http://localhost:5173/order/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "http://localhost:5173/"

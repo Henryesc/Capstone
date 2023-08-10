@@ -6,7 +6,7 @@ const db = pgp(process.env.URL);
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const PORT = process.env.PORT || 3030
-const giftCardsRouter = require("./routes/gift_cards");
+const {giftCardsRouter, sessionIdRetrieves} = require("./routes");
 
 
 
@@ -58,7 +58,8 @@ server.post("/gift-card", async (req, res) => {
 
 // Routes
 
-server.use("/", giftCardsRouter)
+server.use("/", giftCardsRouter);
+server.use("/", sessionIdRetrieves);
 
 server.listen(PORT, () => {
     console.log(`The server is running at PORT ${PORT}`);

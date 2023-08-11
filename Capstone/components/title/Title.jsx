@@ -57,7 +57,7 @@ const TitleWrapper = styled.div`
 const SectionTitleStyle = styled.h1`
   color: #000;
   font-family: "Caviar Dreams Bold";
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -65,7 +65,7 @@ const SectionTitleStyle = styled.h1`
   text-transform: uppercase;
 
   @media (width >= 669px) {
-    font-size: 55px;
+    font-size: 34px;
   }
 `;
 

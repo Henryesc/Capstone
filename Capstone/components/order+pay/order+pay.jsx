@@ -29,7 +29,7 @@ const OrderRedirect = () => {
             <Image src="uberImage.png" />
           </ImageContainer>
           <SocialLinkContainer>
-            <Button><SiUbereats/></Button>
+            <Button href="https://www.ubereats.com/store/govindas-vegetarian-cuisine/TEe_ZaVCQiCrwEaTsBy65Q?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE0MDUlMjBXJTIwMzR0aCUyMFN0JTIwYTMwNSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVpc3hOREExSUZjZ016UjBhQ0JUZENCaE16QTFMQ0JJYjNWemRHOXVMQ0JVV0NBM056QXhPQ3dnVlZOQklpQWFIZ29XQ2hRS0VnbXAtNF8wcDhkQWhoSGhZMUZkSHhDT2RoSUVZVE13TlElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBMjkuODE2OTg5NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS05NS40MjQyMDkxOTk5OTk5OSU3RA%3D%3D&ps=1"><SiUbereats/></Button>
           </SocialLinkContainer>
         </CardContainer>
         <CardContainer>

@@ -1,11 +1,13 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+const {v4: uuidv4} = require("uuid");
 
 router.post('/buy-gift-card', async (req, res) => {
 
-    const { product_name, buyer, recipient, comment, id, amount, quantity, location } = req.body;
+    const { product_name, buyer, recipient, comment, amount, quantity, location } = req.body;
+    const id = uuidv4();
 
 	try {
         const product = await stripe.products.retrieve(
@@ -32,6 +34,8 @@ router.post('/buy-gift-card', async (req, res) => {
             metadata: {
                 'order_id': id,
                 'buyer_name': buyer.name,
+                'image': product.images[0],
+                'price': amount
               },
 			// redirect urls 
 			success_url: "http://localhost:5173/order/success?session_id={CHECKOUT_SESSION_ID}",

@@ -58,7 +58,6 @@ const GiftCards = () => {
         phone: destinataryPhone,
       },
       comment: comment,
-      id: "xdsdsas",
       amount: amount * 100,
       quantity: 1,
       location,
@@ -266,18 +265,18 @@ const Gift = styled.section`
     gap: 24px;
     @media (width >= 920px) {
       flex-direction: row;
+      position: relative;
     }
-    position: relative;
   }
   .img-container {
     width: 100%;
-    max-height: 300px;
+    height: 350px;
     object-fit: cover;
     object-position: center;
-    flex: 1;
     @media (width >= 920px) {
       height: auto;
       max-height: fit-content;
+      flex: 1;
     }
   }
   .img {

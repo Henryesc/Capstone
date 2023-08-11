@@ -4,8 +4,10 @@ const server = express();
 const pgp = require("pg-promise")();
 const db = pgp(process.env.URL);
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 const PORT = process.env.PORT || 3030
+
 const {giftCardsRouter, sessionIdRetrieves} = require("./routes");
 
 
@@ -16,6 +18,7 @@ server.use(cors({
     credentials: true
 }));
 server.use(express.json());
+server.use(cookieParser());
 
 server.get('/heartbeat', (req, res) => {
     res.json({

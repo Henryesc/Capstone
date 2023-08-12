@@ -35,7 +35,7 @@ export default CateringRequest;
 
 const CateringContainer = styled.section`
   width: 100%;
-  height: 100%;
+  min-height: 300px;
   background: url("https://i.postimg.cc/MxYVwcdV/background-Catering-Section.png")
     no-repeat;
   background-position: center;

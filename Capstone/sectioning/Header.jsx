@@ -35,8 +35,8 @@ const Header = () => {
     data &&
     data.map((item) => {
       return (
-        <NavList>
-          <NavLink onClick={handleNavClick} key={item.id} to={item.href}>
+        <NavList key={item.id}>
+          <NavLink onClick={handleNavClick}  to={item.href}>
             {item.name}
           </NavLink>
         </NavList>

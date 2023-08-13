@@ -68,7 +68,7 @@ const TextContainer = styled.div`
   }
 `;
 
-const TitleText = styled.h4`
+const TitleText = styled.span`
   width: 100%;
   font-size: 24px;
   font-weight: 700;
@@ -80,6 +80,7 @@ const TitleText = styled.h4`
 
 const TitleTextYellow = styled(TitleText)`
   color: #d0af3d;
+  margin-right: 8px;
 `;
 
 const InfoText = styled.span`

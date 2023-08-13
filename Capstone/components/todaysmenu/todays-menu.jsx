@@ -92,7 +92,7 @@ const TodaysMenu = () => {
             <div className="menu-footer">
                 <p className="times">*Wednesday, Friday & Sunday 100% Vegan Menu</p>
                 <p className="bar">|</p>
-                <p className="socials">Follow us on Twitter:<p className="govindas">@GovindashouM</p></p>
+                <span className="socials">Follow us on Twitter:<span className="govindas">@GovindashouM</span></span>
             </div>
           </div>
         </div>

@@ -80,14 +80,16 @@ const WrapContainer = styled.div`
   width: 90%;
   height: fit-content;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: stretch;
   gap: 24px;
   padding: 24px 0;
   margin: 0 auto;
+  @media (width >= 990px) {
+    flex-direction: row;
+  }
 `;
 
 const CardContainer = styled.div`

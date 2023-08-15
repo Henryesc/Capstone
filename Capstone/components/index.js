@@ -5,6 +5,7 @@ import Title from "./title/Title";
 import OurMenu from "./our-menu/Our-menu";
 import MenuPrice from "./our-menu/Menu-price";
 import CateringRequest from "./catering/CateringRequest";
+import FoodCard from "./todaysmenu/FoodCard";
 
 
-export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest };
+export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest, FoodCard };

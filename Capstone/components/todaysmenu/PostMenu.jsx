@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 import { IoAdd } from "react-icons/io5";
+import { CiCircleRemove } from "react-icons/ci";
 import Title from "../title/Title";
 import "../../src/App.css";
 
 const PostMenu = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [isFileReadyToSend, setIsFileReadyToSend] = useState(false);
+  const [isPostSuccessful, setIsPostSuccessul] = useState(false)
   const [items, setItems] = useState([
     { id: 1, value: "" },
     { id: 2, value: "" },
@@ -22,7 +25,11 @@ const PostMenu = () => {
   ]);
 
   const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+    const file = event.target.files[0];
+    console.log(file);
+    console.log(!!file);
+    setSelectedFile(file);
+    setIsFileReadyToSend(!!file);
   };
 
   const handleInputChange = (event, index) => {
@@ -40,14 +47,15 @@ const PostMenu = () => {
     ]);
   };
 
-  const handleUpload = async () => {
-    if (selectedFile) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const isInputFilled = items.some((item) => item.value === "");
+
+    if (isFileReadyToSend && !isInputFilled) {
       const formData = new FormData();
       formData.append("image", selectedFile);
-
-      items.forEach((input) => {
-        if (input.value === "") return;
-        formData.append(`input_${input.id}`, input.value);
+      items.forEach((item) => {
+        formData.append(`input_${item.id}`, item.value);
       });
 
       try {
@@ -58,27 +66,20 @@ const PostMenu = () => {
         const response = await fetch("http://localhost:8080/upload", options);
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          setIsPostSuccessul(true);
           setSelectedFile(null);
-          setItems([
-            { id: 1, value: "" },
-            { id: 2, value: "" },
-            { id: 3, value: "" },
-            { id: 4, value: "" },
-            { id: 5, value: "" },
-            { id: 6, value: "" },
-            { id: 7, value: "" },
-            { id: 8, value: "" },
-            { id: 9, value: "" },
-            { id: 10, value: "" },
-            { id: 11, value: "" },
-            { id: 12, value: "" },
-          ]);
+          setItems(items.map((item) => ({ ...item, value: "" })));
+          setIsFileReadyToSend(false);
         }
       } catch (error) {
         console.error("Error uploading image:", error);
       }
     }
+  };
+
+  const handleRemove = () => {
+    setSelectedFile(null);
+    setIsFileReadyToSend(false);
   };
 
   const renderLabel = (index) => {
@@ -114,6 +115,8 @@ const PostMenu = () => {
 
   return (
     <BackGroundContainer>
+      {isPostSuccessful && <FileName>Your tweet has been posted!</FileName>}
+      {!isPostSuccessful && (
       <FormContainer>
         <Title
           info={"Twitter post"}
@@ -124,16 +127,37 @@ const PostMenu = () => {
         <Button type="button" onClick={handleAddInput}>
           <IoAdd />
         </Button>
-        <FileInput
-          required
-          accept="image/jpeg, image/png"
-          type="file"
-          onChange={handleFileChange}
-        />
-        <SendTweet type="submit" onClick={handleUpload}>
+        <FileContainer>
+          <FileInput
+            required
+            accept="image/jpeg, image/png, image/jpg"
+            type="file"
+            onChange={handleFileChange}
+            id="fileInput"
+          />
+          <CustomInputFile
+            $readyToSend={isFileReadyToSend}
+            htmlFor="fileInput"
+          ></CustomInputFile>
+          <FileName>
+            {selectedFile ? `${selectedFile.name}` : "No file choosen"}
+          </FileName>
+          {isFileReadyToSend && (
+            <RemoveButton
+              $readyToSend={isFileReadyToSend}
+              type="button"
+              onClick={handleRemove}
+            >
+              <CiCircleRemove />
+            </RemoveButton>
+          )}
+        </FileContainer>
+        <SendTweet type="submit" onClick={handleSubmit}>
           Send Tweet
         </SendTweet>
       </FormContainer>
+
+      )}
     </BackGroundContainer>
   );
 };
@@ -151,7 +175,7 @@ const BackGroundContainer = styled.section`
 const FormContainer = styled.form`
   width: 90%;
   height: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   padding: 24px 0;
   display: flex;
   flex-direction: column;
@@ -164,7 +188,8 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px;
+  padding: 10px 6px;
+  position: relative;
 `;
 
 const Label = styled.label`
@@ -177,16 +202,17 @@ const Label = styled.label`
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   .full-width {
     width: 100%;
   }
   .half-width {
-    width: 50%;
+    flex: 1;
   }
 `;
 
 const Input = styled.input`
+  position: relative;
   width: 100%;
   height: 34px;
   border-radius: 8px;
@@ -201,24 +227,83 @@ const Input = styled.input`
   }
 `;
 
+const FileContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 24px;
+  align-items: center;
+  font-family: "Caviar Dreams Bold";
+  width: 100%;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+`;
+
 const FileInput = styled.input.attrs({
   type: "file",
 })`
-  &::file-selector-button {
-    margin-right: 20px;
-    border: none;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-    font-family: "Caviar Dreams Bold";
+  display: none;
+`;
+
+const CustomInputFile = styled.label`
+  position: relative;
+  width: 180px;
+  height: 50%;
+  border: none;
+  background: #1976d2;
+
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  font-family: "Caviar Dreams Bold";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &:hover {
+    background: #1976d2c8;
   }
 
-  &::file-selector-button:hover {
-    background: #0d45a5;
+  &::after {
+    content: "Choose File";
+    width: 100%;
+    text-align: center;
+    font-family: "Caviar Dreams Bold";
+    height: fit-content;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-size: 20px;
+    ${(props) => props.$readyToSend && "content: 'Ready!';"}
+    ${(props) => props.$readyToSend && "color: #fff;"}
+    display: inline-block;
   }
+
+  &::before {
+    content: "";
+    width: 220px;
+    background: #4caf50;
+    position: absolute;
+    left: -200%;
+    opacity: 0;
+    transition: left 0.8s ease-in-out;
+    height: 100px;
+    ${(props) => props.$readyToSend && "left: 0%;"}
+    ${(props) => props.$readyToSend && "opacity: 1;"}
+  }
+`;
+
+const FileName = styled.span`
+  font-size: 20px;
+  color: #000;
+  width: fit-content;
 `;
 
 const Button = styled.button`
@@ -233,13 +318,13 @@ const Button = styled.button`
   font-size: 25px;
   font-family: "Caviar Dreams Bold";
   margin: 0 auto;
-  background: #084cdf;
+  background: #1976d2;
   color: #fff;
   -webkit-box-shadow: 5px 6px 62px -6px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 5px 6px 62px -6px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 6px 62px -6px rgba(0, 0, 0, 0.3);
   &:hover {
-    background: #0d45a5;
+    background: #1976d2c8;
     transform: translateY(-2px);
     transition: transform 0.2s ease-in-out;
   }
@@ -248,5 +333,26 @@ const Button = styled.button`
 const SendTweet = styled(Button)`
   width: 200px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 16px;
+  background: #1976d2;
+
+
+  &:hover {
+    background: #1976d2c8;
+  }
+`;
+
+const RemoveButton = styled(Button)`
+  opacity: 0;
+  ${(props) => props.$readyToSend && "opacity: 1;"}
+  transition: opacity 0.9s ease-in-out;
+  background: #f54646fc;
+  height: 35px;
+  width: 35px;
+  margin: 0;
+  &:hover {
+    background: #f54646a1;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
+  }
 `;

@@ -87,6 +87,6 @@ const SectionSubtitleStyle = styled.p`
   line-height: 40px;
 `;
 
-const SectionSubtitleText = ({text}) => {
-    return <SectionSubtitleStyle>{text}</SectionSubtitleStyle>
-}
+const SectionSubtitleText = ({ text }) => {
+  return <SectionSubtitleStyle>{text}</SectionSubtitleStyle>;
+};

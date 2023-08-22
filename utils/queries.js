@@ -44,6 +44,22 @@ const deletePreviousMenuData = async (menuId) => {
         console.error("Error deleting previous menu data:", error);
         throw error;
     }
+};
+
+const getTodayMenuData = async () => {
+    const selectQuery = "SELECT data FROM input_data";
+  
+    try {
+      const result = await db.oneOrNone(selectQuery);
+      if (result && result.data) {
+        return result.data;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error("Error retrieving menu data:", error);
+      throw error;
+    }
 }
 
-module.exports = { storeInputData, postReview, deletePreviousMenuData };
+module.exports = { storeInputData, postReview, deletePreviousMenuData, getTodayMenuData };

@@ -6,7 +6,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const { TwitterApi } = require("twitter-api-v2");
-const { storeInputData, deletePreviousMenuData } = require("../utils/queries");
+const { storeInputData, deletePreviousMenuData, getTodayMenuData } = require("../utils/queries");
 
 router.use(bodyParser.json({ limit: "10mb"}));
 router.use(bodyParser.urlencoded({ extended: true, limit: "10mb"}));
@@ -40,6 +40,8 @@ router.get("/", (req, res) => {
     res.sendFile(-__dirname + "/index.html");
 });
 
+// POST tweet
+
 router.post("/upload", upload.single("image"), async (req, res) => {
     const incommingObj = req.body
     try {
@@ -67,7 +69,21 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     }
 });
 
-// POST tweet
+// Get todays menu 
+
+router.get("/today-menu", async (req, res) => {
+    try {   
+        const menuData = await getTodayMenuData()
+        if(menuData) {
+            res.json({menu: menuData});
+        } else {
+            res.status(404).json({ error: "Menu data not found" });
+        }
+    } catch (error) {
+        console.error("Error retrieving today's menu:", error);
+        res.status(500).json({ error: "Internal server error" });
+    };
+});
 
 const mediaTweet = async (image_path, tweet_text) => {
     try {
@@ -81,5 +97,7 @@ const mediaTweet = async (image_path, tweet_text) => {
         console.error(e)
     };
 };
+
+
 
 module.exports = router

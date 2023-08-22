@@ -5,7 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3030;
 
-const {giftCardsRouter, sessionIdRetrieves, uploads, insertReview} = require("./routes");
+const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require("./routes");
 
 
 
@@ -43,7 +43,7 @@ server.post("/gift-card", async (req, res) => {
 
 server.use("/", giftCardsRouter);
 server.use("/", sessionIdRetrieves);
-server.use("/", uploads);
+server.use("/", today_menu);
 server.use("/", insertReview);
 
 

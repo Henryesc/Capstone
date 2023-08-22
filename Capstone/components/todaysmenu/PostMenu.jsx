@@ -26,8 +26,6 @@ const PostMenu = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    console.log(file);
-    console.log(!!file);
     setSelectedFile(file);
     setIsFileReadyToSend(!!file);
   };
@@ -66,6 +64,7 @@ const PostMenu = () => {
         const response = await fetch("http://localhost:8080/upload", options);
         if (response.ok) {
           const data = await response.json();
+          console.log(data)
           setIsPostSuccessul(true);
           setSelectedFile(null);
           setItems(items.map((item) => ({ ...item, value: "" })));
@@ -90,7 +89,6 @@ const PostMenu = () => {
 
   const inputClass = (index) => {
     if (index === 0) return "full-width";
-    if (index === 1) return "half-width";
     return "strict-width";
   };
 
@@ -206,9 +204,7 @@ const Wrapper = styled.div`
   .full-width {
     width: 100%;
   }
-  .half-width {
-    flex: 1;
-  }
+
 `;
 
 const Input = styled.input`

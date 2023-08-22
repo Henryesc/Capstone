@@ -4,12 +4,17 @@
   "description": "��#\u0000 \u0000C\u0000a\u0000p\u0000s\u0000t\u0000o\u0000n\u0000e\u0000\r\u0000 \u0000",
   "main": "server.js",
   "dependencies": {
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
     "pg-promise": "^11.5.0",
     "stripe": "^12.17.0",
+    "twitter-api-v2": "^1.15.1",
     "uuid": "^9.0.0"
   },
   "scripts": {

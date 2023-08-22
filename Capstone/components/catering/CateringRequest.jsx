@@ -39,6 +39,7 @@ const CateringContainer = styled.section`
   background: url("https://i.postimg.cc/MxYVwcdV/background-Catering-Section.png")
     no-repeat;
   background-position: center;
+  background-size: cover;
 `;
 
 const WrapContainer = styled.div`

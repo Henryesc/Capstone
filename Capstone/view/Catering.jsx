@@ -1,7 +1,11 @@
+import { PostMenu } from "../components";
 
 const Catering = () => {
+
   return (
-    <div>Catering</div>
-  )
-}
-export default Catering
+    <>
+    <PostMenu />
+    </>
+  );
+};
+export default Catering;

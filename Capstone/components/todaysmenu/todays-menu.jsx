@@ -44,14 +44,7 @@ const TodaysMenu = () => {
                 <CircleVector src="/Vector.png" alt="main dish vector" />
                 <MiddleDish
                   src="/pexels-monica-turlui-7218637.png"
-                  alt="main dish"
-                />
-              </MiddleSection>
-              <RightSection>
-                <FoodCard
-                  text={"Basmati Rice VGF"}
-                  image={"/Rectangle 34624172.png"}
-                  imageInfo={"Basmati Rice VGF"}
+                  alt=""
                 />
                 <FoodCard
                   text={"Basmati Rice VGF"}

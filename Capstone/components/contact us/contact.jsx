@@ -2,72 +2,38 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import '../../src/App.css';
 
-const LeaveReviews = () => {
-  const [name,setName] = useState("")
-  const [comment,setComment] = useState("")
-  const [rating,setRating] = useState(5)
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const response = await fetch("https://govindasbackend.vercel.app/add-review", {
-        method:"POST", 
-        headers:{
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "*",
-        },
-        body:JSON.stringify({
-          rating: rating,
-          comment: comment,
-          name: name,
-        }),
-      })
-      const data = await response.json();
-      setName("")
-      setComment("")
-      setRating(5)
-      return data
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-
-
+const Contact = () => {
+  
   return (
-    <Reviews>
-      { <form className="main" onSubmit={handleSubmit}> 
+    <ContactUS>
+      { <form action="https://formspree.io/f/myyqzdav"
+        method="POST" className="main"> 
         <div className="container">
-          <div className="img-container">
-            <div></div>
-          </div>
           <div className="info-section">
             <div className="info-container">
-              <h1 className="title">Leave A Review</h1>
+              <h1 className="title">Contact US</h1>
               <div className="sub-title">We'd Love to hear your Feedback</div>
               <div className="headings" >Name :</div>
-              <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
+              <input className="fill-ins" type="text" name="name"/>
+              <div className="headings" >Email :</div>
+              <input className="fill-ins" type="text" name="email"/>
               <div className="headings" >Comment :</div>
-              <input className="message" type="text" onChange={(e) => setComment(e.target.value)} value={comment}/>
-              <div className="headings" >Rating : 1-5</div>
-              <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
+              <input className="message" type="text" name="message"/>
             <div className="btn-container">
               <button type='submit' className="btn">Submit</button>
-              <div className="discount">Get 10% off your next order when you leave a review</div>
             </div>
             </div>
           </div>
         </div>
       </form>}
-    </Reviews>
+    </ContactUS>
   );
 };
 
-export default LeaveReviews;
+export default Contact;
 
 
-  const Reviews = styled.div`
+  const ContactUS = styled.div`
   .main{
     height: 1229px;
     width: 100%;
@@ -148,6 +114,7 @@ export default LeaveReviews;
     display: flex;
     padding: 10% 0px 0px 0px;
     column-gap: 10%;
+    justify-content: center;
   }
   .btn{
     width: 240px;

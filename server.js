@@ -10,8 +10,8 @@ const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require(
 
 
 server.use(cors({
-    origin: ["http://localhost:5173", "https://govindas.vercel.app/", "https://capstone-henryesc.vercel.app/",  "*"],
-    methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH'],
+    origin: ["http://localhost:5173", "https://govindas.vercel.app", "https://capstone-henryesc.vercel.app"],
+    methods: ["GET", "POST", "DELETE", 'PUT','PATCH', "OPTIONS"],
     credentials: true
 }));
 server.use(express.json());

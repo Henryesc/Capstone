@@ -61,7 +61,7 @@ const PostMenu = () => {
           method: "POST",
           body: formData,
         };
-        const response = await fetch("http://localhost:8080/upload", options);
+        const response = await fetch("https://govindasbackend.vercel.app/upload", options);
         if (response.ok) {
           const data = await response.json();
           console.log(data)

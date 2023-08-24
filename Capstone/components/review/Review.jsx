@@ -1,109 +1,130 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
-import '../../src/App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
+import "../../src/App.css";
 
 const LeaveReviews = () => {
-  const [name,setName] = useState("")
-  const [comment,setComment] = useState("")
-  const [rating,setRating] = useState(5)
-
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [rating, setRating] = useState(5);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const response = await fetch("https://govindasbackend.vercel.app/add-review", {
-        method:"POST", 
-        headers:{
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "*",
-        },
-        body:JSON.stringify({
-          rating: rating,
-          comment: comment,
-          name: name,
-        }),
-      })
+      const response = await fetch(
+        "https://govindasbackend.vercel.app/add-review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+            Origin: "https://govindas.vercel.app",
+          },
+          body: JSON.stringify({
+            rating: rating,
+            comment: comment,
+            name: name,
+          }),
+        }
+      );
       const data = await response.json();
-      setName("")
-      setComment("")
-      setRating(5)
-      return data
+      setName("");
+      setComment("");
+      setRating(5);
+      return data;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
-
+  };
 
   return (
     <Reviews>
-      { <form className="main" onSubmit={handleSubmit}> 
-        <div className="container">
-          <div className="img-container">
-            <div></div>
-          </div>
-          <div className="info-section">
-            <div className="info-container">
-              <h1 className="title">Leave A Review</h1>
-              <div className="sub-title">We'd Love to hear your Feedback</div>
-              <div className="headings" >Name :</div>
-              <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
-              <div className="headings" >Comment :</div>
-              <input className="message" type="text" onChange={(e) => setComment(e.target.value)} value={comment}/>
-              <div className="headings" >Rating :</div>
-              <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
-            <div className="btn-container">
-              <button type='submit' className="btn">Submit</button>
-              <div className="discount">Get 10% off your next order when you leave a review</div>
+      {
+        <form className="main" onSubmit={handleSubmit}>
+          <div className="container">
+            <div className="img-container">
+              <div></div>
             </div>
+            <div className="info-section">
+              <div className="info-container">
+                <h1 className="title">Leave A Review</h1>
+                <div className="sub-title">We'd Love to hear your Feedback</div>
+                <div className="headings">Name :</div>
+                <input
+                  className="fill-ins"
+                  type="text"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
+                <div className="headings">Comment :</div>
+                <input
+                  className="message"
+                  type="text"
+                  onChange={(e) => setComment(e.target.value)}
+                  value={comment}
+                />
+                <div className="headings">Rating :</div>
+                <input
+                  className="fill-ins"
+                  type="text"
+                  onChange={(e) => setRating(e.target.value)}
+                  value={rating}
+                />
+                <div className="btn-container">
+                  <button type="submit" className="btn">
+                    Submit
+                  </button>
+                  <div className="discount">
+                    Get 10% off your next order when you leave a review
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </form>}
+        </form>
+      }
     </Reviews>
   );
 };
 
 export default LeaveReviews;
 
-
-  const Reviews = styled.div`
-  .main{
+const Reviews = styled.div`
+  .main {
     height: 1229px;
     width: 100%;
     display: flex;
     flex-shrink: 0;
     background-color: rgba(252, 248, 239, 0.959);
   }
-  .container{
+  .container {
     width: 100%;
-    display: flex; 
+    display: flex;
     justify-content: center;
   }
-  .img-container{
+  .img-container {
     display: flex;
     align-items: center;
     flex: 0;
-    padding: 0px 2% 0px 5%; 
+    padding: 0px 2% 0px 5%;
   }
-  .img{
+  .img {
     width: 686px;
     height: 898px;
     flex-shrink: 0;
   }
-  .info-section{
+  .info-section {
     display: flex;
     flex-direction: column;
     // flex: 1;
     justify-content: center;
   }
-  .info-container{
+  .info-container {
     display: flex;
     flex-direction: column;
     align-self: center;
     align-content: space-around;
   }
-  .title{ 
+  .title {
     color: #000;
     font-family: Caviar Dreams;
     font-size: 33px;
@@ -113,7 +134,7 @@ export default LeaveReviews;
     letter-spacing: 2.75px;
     text-transform: uppercase;
   }
-  .sub-title{
+  .sub-title {
     color: #595555;
     font-family: Josefin Sans;
     font-size: 22px;
@@ -121,7 +142,7 @@ export default LeaveReviews;
     font-weight: 500;
     line-height: normal;
   }
-  .headings{
+  .headings {
     color: #000;
     font-family: Caviar Dreams;
     font-size: 18px;
@@ -130,31 +151,31 @@ export default LeaveReviews;
     line-height: normal;
     margin-bottom: 2px;
   }
-  .fill-ins{
+  .fill-ins {
     width: 730px;
     height: 65px;
     flex-shrink: 0;
     margin: 10px 0px 10px 0px;
   }
-  .message{
+  .message {
     width: 730px;
     height: 166px;
     flex-shrink: 0;
-    fill: #FFF;
+    fill: #fff;
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.34);
   }
-  .btn-container{
+  .btn-container {
     display: flex;
     padding: 10% 0px 0px 0px;
     column-gap: 10%;
   }
-  .btn{
+  .btn {
     width: 240px;
     height: 70px;
     flex-shrink: 0;
-    color: #FFF;
-    background: #D0AF3D;
+    color: #fff;
+    background: #d0af3d;
     font-family: Open Sans Condensed;
     font-size: 22px;
     font-style: normal;
@@ -164,7 +185,7 @@ export default LeaveReviews;
     text-transform: uppercase;
     border: 0px;
   }
-  .discount{
+  .discount {
     display: flex;
     align-self: center;
     color: #000;
@@ -174,4 +195,4 @@ export default LeaveReviews;
     font-weight: 400;
     line-height: 40px; /* 160% */
   }
-`
+`;

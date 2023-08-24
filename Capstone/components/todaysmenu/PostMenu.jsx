@@ -60,6 +60,7 @@ const PostMenu = () => {
         const options = {
           method: "POST",
           headers: {
+            "Content-Type": "application/json",
             Origin: "https://govindas.vercel.app",
             "Access-Control-Allow-Origin": "*",
           },

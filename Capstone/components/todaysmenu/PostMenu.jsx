@@ -59,6 +59,10 @@ const PostMenu = () => {
       try {
         const options = {
           method: "POST",
+          headers: {
+            Origin: "https://govindas.vercel.app",
+            "Content-Type": "multipart/form-data"
+          },
           body: formData,
         };
         const response = await fetch("https://govindasbackend.vercel.app/upload", options);

@@ -1,78 +1,89 @@
 import React from "react";
 import styled from "styled-components";
 import FoodCard from "./FoodCard";
+import FoodCard from "./FoodCard";
 import "../../src/App.css";
+import Title from "../title/Title";
 import Title from "../title/Title";
 
 const TodaysMenu = () => {
   // We need to bring the date from the post
+  // We need to bring the date from the post
   return (
-    <MenuContainer>
-      <MenuWrapper>
-        <FoodAndInfoContainer>
-          <Title
-            title={"TODAY’S MENU"}
-            info={"May 31, Wednesday"}
-            subtitle={
-              "Every time you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area"
-            }
-          />
-          <FoodContainer>
-            <LeftSection>
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice"}
-              />
-              <FoodCard
-                text={"Dal Fry VGF"}
-                image={"/Rectangle 34624173.png"}
-                imageInfo={"Dal fry"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-            </LeftSection>
-            <MiddleSection>
-              <CircleVector src="/Vector.png" alt="main dish vector" />
-              <MiddleDish src="/pexels-monica-turlui-7218637.png" alt="" />
-            </MiddleSection>
-            <RightSection>
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-            </RightSection>
-          </FoodContainer>
-          <MenuTextContainer>
-            <MenuTime>*Wednesday, Friday & Sunday 100% Vegan Menu</MenuTime>
-            <MenuTimeSeparator />
-            <MenuTimeSocials>
-              <MenuTimeText>Follow us on Twitter:</MenuTimeText>
-              <MenuTimeTextYellow>@GovindashouM</MenuTimeTextYellow>
-            </MenuTimeSocials>
-          </MenuTextContainer>
-        </FoodAndInfoContainer>
-      </MenuWrapper>
-    </MenuContainer>
+      <MenuContainer>
+        <MenuWrapper>
+          <FoodAndInfoContainer>
+            <Title
+              title={"TODAY’S MENU"}
+              info={"May 31, Wednesday"}
+              subtitle={
+                "Every time you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area"
+              }
+            />
+            <FoodContainer>
+              <LeftSection>
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice"}
+                />
+                <FoodCard
+                  text={"Dal Fry VGF"}
+                  image={"/Rectangle 34624173.png"}
+                  imageInfo={"Dal fry"}
+                />
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+              </LeftSection>
+              <MiddleSection>
+                <CircleVector src="/Vector.png" alt="main dish vector" />
+                <MiddleDish
+                  src="/pexels-monica-turlui-7218637.png"
+                  alt="main dish"
+                />
+              </MiddleSection>
+              <RightSection>
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+                <FoodCard
+                  text={"Basmati Rice VGF"}
+                  image={"/Rectangle 34624172.png"}
+                  imageInfo={"Basmati Rice VGF"}
+                />
+              </RightSection>
+            </FoodContainer>
+            <MenuTextContainer>
+              <MenuTime>*Wednesday, Friday & Sunday 100% Vegan Menu</MenuTime>
+              <MenuTimeSeparator />
+              <MenuTimeSocials>
+                <MenuTimeText>Follow us on Twitter:</MenuTimeText>
+                <MenuTimeTextYellow>@GovindashouM</MenuTimeTextYellow>
+              </MenuTimeSocials>
+            </MenuTextContainer>
+          </FoodAndInfoContainer>
+        </MenuWrapper>
+      </MenuContainer>
   );
 };
 
@@ -188,5 +199,5 @@ const MenuTimeText = styled.span`
 `;
 
 const MenuTimeTextYellow = styled.a`
-  color: #d0af3d;
-`;
+    color: #d0af3d;
+`

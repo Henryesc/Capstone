@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import FoodCard from "./FoodCard";
+import FoodCard from "./FoodCard";
 import "../../src/App.css";
+import Title from "../title/Title";
 import Title from "../title/Title";
 
 const TodaysMenu = () => {
+  // We need to bring the date from the post
   // We need to bring the date from the post
   return (
       <MenuContainer>
